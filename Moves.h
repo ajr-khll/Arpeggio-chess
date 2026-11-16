@@ -34,9 +34,11 @@ struct GameState {
 void startPos(GameState &state);
 
 std::vector<Move> calculatePossibleMoves(int piece, sf::Vector2i position,
-                                         GameState game);
+                                         GameState game,
+                                         bool capturesOnly = false);
 
 std::vector<Move> gatherMoves(GameState game, int side,
+                              bool capturesOnly = false,
                               Move priority = {{-1, -1}, {-1, -1}});
 
 bool isInCheck(GameState current, int color);

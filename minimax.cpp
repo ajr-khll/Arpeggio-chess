@@ -2,6 +2,7 @@
 #include "Moves.h"
 #include "TextureManager.h"
 #include "simulateMoves.h"
+#include <SFML/Window/Keyboard.hpp>
 #include <atomic>
 #include <chrono>
 #include <cstddef>
@@ -9,23 +10,24 @@
 
 // Array for values of pieces
 // 0: Empty
-// 1-6:  W_PAWN, W_KNIGHT, W_BISHOP, W_ROOK, W_QUEEN, W_KING
-// 7-12: B_PAWN, B_KNIGHT, B_BISHOP, B_ROOK, B_QUEEN, B_KING
+// 1-6:  W_PAWN, W_ROOK, W_KNIGHT, W_BISHOP, W_QUEEN, W_KING
+// 7-12: B_PAWN, B_ROOK, B_KNIGHT, B_BISHOP, B_QUEEN, B_KING
+// (must match the PieceIDs order in TextureManager.h)
 
 enum colors { WHITE = 0, BLACK = 1 };
 
 static const int PIECE_VALUES[13] = {
     0,     // EMPTY
     100,   // W_PAWN
+    500,   // W_ROOK
     320,   // W_KNIGHT
     330,   // W_BISHOP
-    500,   // W_ROOK
     900,   // W_QUEEN
     20000, // W_KING (Arbitrarily high so the engine never sacrifices it)
     100,   // B_PAWN
+    500,   // B_ROOK
     320,   // B_KNIGHT
     330,   // B_BISHOP
-    500,   // B_ROOK
     900,   // B_QUEEN
     20000  // B_KING
 };
@@ -215,23 +217,60 @@ evaluatedMove Minimax(GameState state, int side, int alpha, int beta,
 std::atomic_bool stop_search{false};
 std::chrono::steady_clock::time_point deadline;
 
+// follow all capture-to-capture paths on the board to find any potential
+// blunders.
+int quiescenceSearch(GameState state, int alpha, int beta) {
+  int standPat = evaluateScore(state, BLACK);
+  bool black = state.sideToMove == BLACK;
+
+  if (black) {
+    if (standPat >= beta)
+      return standPat;
+    if (standPat > alpha)
+      alpha = standPat;
+  } else {
+    if (standPat <= alpha)
+      return standPat;
+    if (standPat < beta)
+      beta = standPat;
+  }
+
+  int best = standPat;
+  for (Move move : gatherMoves(state, state.sideToMove, true)) {
+    int score = quiescenceSearch(simulateMove(state, move), alpha, beta);
+    if (black) {
+      if (score > best)
+        best = score;
+      if (score > alpha)
+        alpha = score;
+    } else {
+      if (score < best)
+        best = score;
+      if (score < beta)
+        beta = score;
+    }
+    if (alpha >= beta)
+      break;
+  }
+  return best;
+}
+
 int minimaxScore(GameState state, int maxDepth, int alpha = -1000000,
                  int beta = 1000000) {
 
   if (maxDepth == 0) {
     // base case
     int score = evaluateScore(state, BLACK);
-    if (score > alpha) {
-      alpha = score;
-    }
+    // consider if any standing moves are blunders
+    score = quiescenceSearch(state, alpha, beta);
     return score;
   }
 
   std::vector<Move> moves = gatherMoves(state, state.sideToMove);
   if (moves.empty()) {
     if (isInCheck(state, state.sideToMove)) {
-      // If White is mated, return a very high number (but slightly lower if it
-      // takes longer) If Black is mated, return a very low number (but
+      // If White is mated, return a very high number (but slightly lower if
+      // it takes longer) If Black is mated, return a very low number (but
       // slightly higher if it takes longer)
       return (state.sideToMove == WHITE) ? 1000000 + maxDepth
                                          : -1000000 - maxDepth;
@@ -281,7 +320,8 @@ int minimaxScore(GameState state, int maxDepth, int alpha = -1000000,
 
 evaluatedMove rootSearch(GameState state, int maxDepth,
                          Move lastBest = {{-1, -1}, {-1, -1}}) {
-  std::vector<Move> moves = gatherMoves(state, state.sideToMove, lastBest);
+  std::vector<Move> moves =
+      gatherMoves(state, state.sideToMove, false, lastBest);
   evaluatedMove bestMove{{{-1, -1}, {-1, -1}},
                          (state.sideToMove == BLACK) ? -10000000 : 10000000};
   for (Move move : moves) {

@@ -6,7 +6,21 @@
 void GameManager::startSearch() {
   stopSearch();
   stop_search = false;
-  deadline = std::chrono::steady_clock::now() + std::chrono::milliseconds(1000);
+  bool white = state.sideToMove == 0;
+  int myTime = white ? time.wtime : time.btime;
+  int myInc = white ? time.winc : time.binc;
+
+  int budget;
+  if (time.movetime > 0) {
+    budget = time.movetime;
+  } else if (myTime > 0) {
+    budget = myTime / 20 + myInc / 2;
+  } else {
+    budget = 1000;
+  }
+
+  deadline =
+      std::chrono::steady_clock::now() + std::chrono::milliseconds(budget);
   searchThread = std::thread([this, s = state] {
     evaluatedMove m = newMinimax(s);
     sender.sendMove(m);
@@ -34,6 +48,7 @@ void GameManager::uciGameLoop() {
           parsedInput.begin()); // remove "position", keep the actual data.
       state = parser.positionParse(parsedInput);
     } else if (parsedInput[0] == "go") {
+      time = parser.goParser(parsedInput);
       startSearch();
     } else if (parsedInput[0] == "stop") {
       stopSearch();

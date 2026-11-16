@@ -12,6 +12,7 @@ private:
   UciParser parser;
   UciOut sender;
   GameState state;
+  TimeState time;
   void startSearch();
   void stopSearch();
   std::thread searchThread;

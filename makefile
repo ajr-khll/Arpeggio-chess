@@ -22,22 +22,38 @@ else
   LIBS += -pthread
 endif
 
-TARGET := app
+VERSION_FILE := VERSION
+CUR_VERSION  := $(shell cat $(VERSION_FILE) 2>/dev/null || echo 1.0.0)
+NEXT_VERSION := $(shell echo $(CUR_VERSION) | awk -F. '{printf "%d.%d.%d", $$1, $$2, $$3 + 1}')
+
+ENGINE_DIR := Engines/Arpeggio-$(NEXT_VERSION)
+TARGET     := $(ENGINE_DIR)/Arpeggio-$(NEXT_VERSION)
+SCRIPT     := $(ENGINE_DIR)/arpeggio-$(NEXT_VERSION).sh
+LATEST     := Engines/Arpeggio-$(CUR_VERSION)/Arpeggio-$(CUR_VERSION)
+
 SRCS   := main.cpp Moves.cpp simulateMoves.cpp minimax.cpp gui.cpp UCI/UciOut.cpp UCI/UciParser.cpp UCI/GameManager.cpp
 OBJS   := $(SRCS:.cpp=.o)
 
+# every `make` builds a new version: Engines/Arpeggio-X.Y.Z/ with its .sh
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(CXX) $(OBJS) $(LIBS) -o $@
+	mkdir -p $(ENGINE_DIR)
+	$(CXX) $(OBJS) $(LIBS) -o $@ || { rmdir $(ENGINE_DIR); exit 1; }
+	printf '#!/bin/sh\nexec "$$(dirname "$$0")/Arpeggio-$(NEXT_VERSION)" uci\n' > $(SCRIPT)
+	chmod +x $(SCRIPT)
+	echo $(NEXT_VERSION) > $(VERSION_FILE)
+	@echo "built Arpeggio $(NEXT_VERSION)"
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
-run: $(TARGET)
-	./$(TARGET)
+# runs the latest built version (GUI mode) without building a new one
+run:
+	./$(LATEST)
 
+# removes object files only; built engines in Engines/ are never deleted
 clean:
-	rm -f $(TARGET) $(OBJS)
+	rm -f $(OBJS)
 
 .PHONY: all run clean

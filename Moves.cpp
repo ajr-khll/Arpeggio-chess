@@ -3,6 +3,7 @@
 #include "simulateMoves.h"
 
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Window/Keyboard.hpp>
 #include <algorithm>
 #include <array>
 #include <cstdlib>
@@ -105,7 +106,7 @@ std::vector<Move> removeIllegalMoves(int piece, std::vector<Move> moves,
 }
 
 std::vector<Move> calculatePossibleMoves(int piece, sf::Vector2i position,
-                                         GameState current) {
+                                         GameState current, bool capturesOnly) {
   std::vector<Move> moves;
 
   if (piece == EMPTY)
@@ -127,10 +128,9 @@ std::vector<Move> calculatePossibleMoves(int piece, sf::Vector2i position,
 
     // reaching the last rank generates one move per promotion piece
     const int promoRank = isWhite ? 0 : 7;
-    const int promoPieces[4] = {isWhite ? W_QUEEN : B_QUEEN,
-                                isWhite ? W_ROOK : B_ROOK,
-                                isWhite ? W_BISHOP : B_BISHOP,
-                                isWhite ? W_KNIGHT : B_KNIGHT};
+    const int promoPieces[4] = {
+        isWhite ? W_QUEEN : B_QUEEN, isWhite ? W_ROOK : B_ROOK,
+        isWhite ? W_BISHOP : B_BISHOP, isWhite ? W_KNIGHT : B_KNIGHT};
     auto addPawnMove = [&](sf::Vector2i to) {
       if (to.y == promoRank) {
         for (int p : promoPieces) {
@@ -211,7 +211,7 @@ std::vector<Move> calculatePossibleMoves(int piece, sf::Vector2i position,
     const int ownRook = isWhite ? W_ROOK : B_ROOK;
     const int kingSide = isWhite ? W_KINGSIDE : B_KINGSIDE;
     const int queenSide = isWhite ? W_QUEENSIDE : B_QUEENSIDE;
-    int(&b)[8][8] = current.board;
+    int (&b)[8][8] = current.board;
 
     if (position.x == 4 && position.y == homeRank &&
         !isSquareAttacked(b, position, enemy)) {
@@ -246,6 +246,14 @@ std::vector<Move> calculatePossibleMoves(int piece, sf::Vector2i position,
     std::vector<sf::Vector2i> queenDirs = rookDirs;
     queenDirs.insert(queenDirs.end(), bishopDirs.begin(), bishopDirs.end());
     addSlidingMoves(moves, piece, position, current.board, queenDirs);
+  }
+
+  if (capturesOnly) {
+    moves.erase(std::remove_if(moves.begin(), moves.end(),
+                               [&](const Move &m) {
+                                 return current.board[m.to.y][m.to.x] == EMPTY;
+                               }),
+                moves.end());
   }
 
   std::vector<Move> validMoves = removeIllegalMoves(piece, moves, current);
@@ -353,7 +361,8 @@ bool isSquareAttacked(int (&BOARD)[8][8], sf::Vector2i target,
 
 // takes a priority parameter, and always places that move first. The move will
 // invariably be repeated.
-vector<Move> gatherMoves(GameState state, int side, Move priority) {
+vector<Move> gatherMoves(GameState state, int side, bool capturesOnly,
+                         Move priority) {
   std::vector<Move> moves;
   if (priority.from != sf::Vector2i{-1, -1}) {
     moves.push_back(priority);
@@ -363,7 +372,7 @@ vector<Move> gatherMoves(GameState state, int side, Move priority) {
       int piece = state.board[y][x];
       if (colorOf(piece) == side) {
         std::vector<Move> pieceMoves =
-            calculatePossibleMoves(piece, {x, y}, state);
+            calculatePossibleMoves(piece, {x, y}, state, capturesOnly);
         moves.insert(moves.end(), pieceMoves.begin(), pieceMoves.end());
       }
     }

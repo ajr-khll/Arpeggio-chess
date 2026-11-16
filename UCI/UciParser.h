@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Moves.h"
+#include "TimeState.h"
 #include <string>
 #include <vector>
 
@@ -12,4 +13,5 @@ public:
   void poll();
   GameState positionParse(std::vector<std::string> fenInput);
   std::vector<std::string> split(std::string line);
+  TimeState goParser(std::vector<std::string> line);
 };

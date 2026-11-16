@@ -1,6 +1,7 @@
 #include "UciParser.h"
 #include "../Moves.h"
 #include "../TextureManager.h"
+#include "TimeState.h"
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Keyboard.hpp>
 #include <sstream>
@@ -185,4 +186,27 @@ std::vector<std::string> UciParser::split(std::string line) {
   }
 
   return out;
+}
+
+TimeState UciParser::goParser(std::vector<std::string> line) {
+  TimeState time;
+  for (int i = 0; i < line.size(); i++) {
+    if (line[i] == "wtime") {
+      time.wtime = std::stoi(line[i + 1]);
+      i++;
+    } else if (line[i] == "btime") {
+      time.btime = std::stoi(line[i + 1]);
+      i++;
+    } else if (line[i] == "winc") {
+      time.winc = std::stoi(line[i + 1]);
+      i++;
+    } else if (line[i] == "binc") {
+      time.binc = std::stoi(line[i + 1]);
+      i++;
+    } else if (line[i] == "movetime") {
+      time.movetime = std::stoi(line[i + 1]);
+      i++;
+    }
+  }
+  return time;
 }
