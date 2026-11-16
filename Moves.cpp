@@ -1,5 +1,6 @@
 #include "Moves.h"
 #include "TextureManager.h"
+#include "TranspositionTable.h"
 #include "simulateMoves.h"
 
 #include <SFML/System/Vector2.hpp>
@@ -60,6 +61,7 @@ void startPos(GameState &state) {
   state.kingPos[WHITE] = {4, 7};
   state.kingPos[BLACK] = {4, 0};
   state.castling = W_KINGSIDE | W_QUEENSIDE | B_KINGSIDE | B_QUEENSIDE;
+  state.setHash();
 }
 
 bool isSquareAttacked(int (&BOARD)[8][8], sf::Vector2i target,
@@ -395,6 +397,7 @@ bool isCheckmated(GameState state, int color) {
 
 GameState makeMove(const GameState &current, const Move &move,
                    const std::optional<std::vector<Move>> &moves) {
+  GameState before = current;
   sf::Vector2i SELECTED = move.from;
   sf::Vector2i coordinate = move.to;
 
@@ -474,5 +477,9 @@ GameState makeMove(const GameState &current, const Move &move,
   newState.kingPos[BLACK] = blackKingPos;
   newState.castling = castling;
 
+  newState.hash = zobristHashMove(before.hash, before, move, newState, seeded);
+
   return newState;
 }
+
+void GameState::setHash() { hash = zobristHash(*this, seeded); }

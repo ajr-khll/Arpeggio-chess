@@ -1,6 +1,7 @@
 #include "UciParser.h"
 #include "../Moves.h"
 #include "../TextureManager.h"
+#include "../minimax.h"
 #include "TimeState.h"
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Keyboard.hpp>
@@ -57,6 +58,7 @@ static GameState moveParser(std::vector<std::string> moves,
       }
     }
     state = makeMove(state, move);
+    positionHistory.push_back(state.hash);
   }
   return state;
 }
@@ -65,10 +67,12 @@ static GameState moveParser(std::vector<std::string> moves,
 GameState UciParser::positionParse(std::vector<std::string> fenInput) {
   int BOARD[8][8];
   GameState state{};
+  positionHistory.clear();
 
   // either fen or startpos
   if (fenInput[0] == "startpos") {
     startPos(state);
+    positionHistory.push_back(state.hash);
     if (fenInput.size() > 2) {
       state = moveParser(
           std::vector<std::string>(fenInput.begin() + 2, fenInput.end()),
@@ -165,6 +169,9 @@ GameState UciParser::positionParse(std::vector<std::string> fenInput) {
   std::string halfmove = fenInput[5];
 
   std::string fullmove = fenInput[6];
+
+  state.setHash();
+  positionHistory.push_back(state.hash);
 
   // parse remaining moves
   if (fenInput.size() >

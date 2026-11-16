@@ -31,7 +31,7 @@ TARGET     := $(ENGINE_DIR)/Arpeggio-$(NEXT_VERSION)
 SCRIPT     := $(ENGINE_DIR)/arpeggio-$(NEXT_VERSION).sh
 LATEST     := Engines/Arpeggio-$(CUR_VERSION)/Arpeggio-$(CUR_VERSION)
 
-SRCS   := main.cpp Moves.cpp simulateMoves.cpp minimax.cpp gui.cpp UCI/UciOut.cpp UCI/UciParser.cpp UCI/GameManager.cpp
+SRCS   := main.cpp Moves.cpp simulateMoves.cpp minimax.cpp gui.cpp UCI/UciOut.cpp UCI/UciParser.cpp UCI/GameManager.cpp TranspositionTable.cpp
 OBJS   := $(SRCS:.cpp=.o)
 
 # every `make` builds a new version: Engines/Arpeggio-X.Y.Z/ with its .sh

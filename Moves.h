@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/System/Vector2.hpp>
+#include <cstdint>
 #include <optional>
 #include <vector>
 
@@ -8,6 +9,12 @@ struct Move {
   sf::Vector2i to;
   int promotion = 0; // piece to promote to (e.g. W_QUEEN), 0 if none
 };
+
+inline bool operator==(const Move &a, const Move &b) {
+  return a.from == b.from &&
+         a.to == b.to &&
+         a.promotion == b.promotion;
+}
 
 // castling rights, stored as bit flags in GameState::castling
 enum CastlingRights {
@@ -29,6 +36,8 @@ struct GameState {
   int sideToMove;
   sf::Vector2i kingPos[2];
   int castling = 0;
+  uint64_t hash = 0;
+  void setHash();
 };
 
 void startPos(GameState &state);

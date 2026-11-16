@@ -1,8 +1,10 @@
 #include "minimax.h"
 #include "Moves.h"
 #include "TextureManager.h"
+#include "TranspositionTable.h"
 #include "simulateMoves.h"
 #include <SFML/Window/Keyboard.hpp>
+#include <algorithm>
 #include <atomic>
 #include <chrono>
 #include <cstddef>
@@ -154,7 +156,6 @@ const int CAP = 5; // think no more than 5 moves ahead
 evaluatedMove Minimax(GameState state, int side, int alpha, int beta,
                       Move lastMove, int depth) {
   // base case
-
   if (depth == CAP) {
     int score = evaluateScore(state, BLACK);
     if (score > alpha) {
@@ -216,6 +217,15 @@ evaluatedMove Minimax(GameState state, int side, int alpha, int beta,
 
 std::atomic_bool stop_search{false};
 std::chrono::steady_clock::time_point deadline;
+std::vector<uint64_t> positionHistory;
+
+static bool isRepetition(uint64_t hash) {
+  for (size_t i = 0; i + 1 < positionHistory.size(); ++i) {
+    if (positionHistory[i] == hash)
+      return true;
+  }
+  return false;
+}
 
 // follow all capture-to-capture paths on the board to find any potential
 // blunders.
@@ -255,8 +265,71 @@ int quiescenceSearch(GameState state, int alpha, int beta) {
   return best;
 }
 
+static uint16_t encodeMove(const Move &m) {
+  int from = m.from.y * 8 + m.from.x;
+  int to = m.to.y * 8 + m.to.x;
+  return static_cast<uint16_t>(from | (to << 6) | (m.promotion << 12));
+}
+
+static Move decodeMove(uint16_t code) {
+  int from = code & 63;
+  int to = (code >> 6) & 63;
+  return {{from % 8, from / 8}, {to % 8, to / 8}, code >> 12};
+}
+
+static const int MATE_THRESHOLD = 900000;
+
+static int scoreToTT(int score, int maxDepth) {
+  if (score >= MATE_THRESHOLD)
+    return score - maxDepth;
+  if (score <= -MATE_THRESHOLD)
+    return score + maxDepth;
+  return score;
+}
+
+static int scoreFromTT(int score, int maxDepth) {
+  if (score >= MATE_THRESHOLD)
+    return score + maxDepth;
+  if (score <= -MATE_THRESHOLD)
+    return score - maxDepth;
+  return score;
+}
+
+static void moveToFront(std::vector<Move> &moves, const Move &target) {
+  for (size_t i = 0; i < moves.size(); ++i) {
+    if (moves[i] == target) {
+      std::swap(moves[0], moves[i]);
+      return;
+    }
+  }
+}
+
 int minimaxScore(GameState state, int maxDepth, int alpha = -1000000,
                  int beta = 1000000) {
+  // check if this position is in our TranspositionTable
+  if (isRepetition(state.hash)) {
+    return 0;
+  }
+
+  Entry *probe_result = zobrist_TT.probe(state.hash);
+  if (probe_result && probe_result->depth >= maxDepth) {
+    int ttScore = scoreFromTT(probe_result->score, maxDepth);
+    // Check bound-type
+    if (probe_result->bound_type == UPPER) {
+      if (ttScore < beta) {
+        beta = ttScore;
+      }
+    } else if (probe_result->bound_type == LOWER) {
+      if (ttScore > alpha) {
+        alpha = ttScore;
+      }
+    } else if (probe_result->bound_type == EXACT) {
+      return ttScore;
+    }
+    if (alpha >= beta) {
+      return ttScore;
+    }
+  }
 
   if (maxDepth == 0) {
     // base case
@@ -265,8 +338,12 @@ int minimaxScore(GameState state, int maxDepth, int alpha = -1000000,
     score = quiescenceSearch(state, alpha, beta);
     return score;
   }
-
   std::vector<Move> moves = gatherMoves(state, state.sideToMove);
+
+  if (probe_result != nullptr) {
+    Move ttMove = decodeMove(probe_result->bestMove);
+    moveToFront(moves, ttMove);
+  }
   if (moves.empty()) {
     if (isInCheck(state, state.sideToMove)) {
       // If White is mated, return a very high number (but slightly lower if
@@ -279,7 +356,10 @@ int minimaxScore(GameState state, int maxDepth, int alpha = -1000000,
     }
   }
   int score = (state.sideToMove == BLACK) ? -10000000 : 10000000;
-
+  Entry entry;
+  Move bestMove;
+  int alphaOriginal = alpha;
+  int betaOriginal = beta;
   for (Move move : moves) {
     if (std::chrono::steady_clock::now() > deadline) {
       stop_search = true;
@@ -287,16 +367,21 @@ int minimaxScore(GameState state, int maxDepth, int alpha = -1000000,
     if (stop_search) {
       return -100000;
     }
-    int moveScore =
-        minimaxScore(simulateMove(state, move), maxDepth - 1, alpha, beta);
+    GameState simulated = simulateMove(state, move);
+    positionHistory.push_back(simulated.hash);
+    int moveScore = minimaxScore(simulated, maxDepth - 1, alpha, beta);
+    positionHistory.pop_back();
+    if (stop_search) {
+      return -100000;
+    }
     if (state.sideToMove == BLACK) {
       // Black maximizes
-
       if (moveScore > alpha) {
         alpha = moveScore;
       }
       if (moveScore > score) {
         score = moveScore;
+        bestMove = move;
       }
       if (alpha >= beta) {
         break;
@@ -308,24 +393,39 @@ int minimaxScore(GameState state, int maxDepth, int alpha = -1000000,
       }
       if (moveScore < score) {
         score = moveScore;
+        bestMove = move;
       }
       if (beta <= alpha) {
         break;
       }
     }
   }
-
+  if (score <= alphaOriginal) {
+    entry.bound_type = UPPER;
+  } else if (score >= betaOriginal) {
+    entry.bound_type = LOWER;
+  } else {
+    entry.bound_type = EXACT;
+  }
+  entry.depth = maxDepth;
+  entry.score = scoreToTT(score, maxDepth);
+  entry.hash = state.hash;
+  entry.bestMove = encodeMove(bestMove);
+  zobrist_TT.store(entry);
   return score; // score of this move
 }
 
 evaluatedMove rootSearch(GameState state, int maxDepth,
                          Move lastBest = {{-1, -1}, {-1, -1}}) {
-  std::vector<Move> moves =
-      gatherMoves(state, state.sideToMove, false, lastBest);
+  std::vector<Move> moves = gatherMoves(state, state.sideToMove);
+  moveToFront(moves, lastBest);
   evaluatedMove bestMove{{{-1, -1}, {-1, -1}},
                          (state.sideToMove == BLACK) ? -10000000 : 10000000};
   for (Move move : moves) {
-    int score = minimaxScore(simulateMove(state, move), maxDepth - 1);
+    GameState simulated = simulateMove(state, move);
+    positionHistory.push_back(simulated.hash);
+    int score = minimaxScore(simulated, maxDepth - 1);
+    positionHistory.pop_back();
     if (std::chrono::steady_clock::now() > deadline) {
       stop_search = true;
     }

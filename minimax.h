@@ -2,9 +2,12 @@
 #include "Moves.h"
 #include <atomic>
 #include <chrono>
+#include <cstdint>
+#include <vector>
 
 extern std::atomic_bool stop_search;
 extern std::chrono::steady_clock::time_point deadline;
+extern std::vector<uint64_t> positionHistory;
 
 struct evaluatedMove : Move {
   int score = 0;
