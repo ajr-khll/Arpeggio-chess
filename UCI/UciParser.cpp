@@ -1,13 +1,10 @@
 #include "UciParser.h"
 #include "../Moves.h"
 #include "../TextureManager.h"
-#include "../minimax.h"
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Keyboard.hpp>
-#include <any>
-#include <iostream>
+#include <sstream>
 #include <string>
-#include <type_traits>
 #include <vector>
 
 std::vector<std::string> UciParser::commandParse(std::string line) {
@@ -29,6 +26,40 @@ std::vector<std::string> UciParser::commandParse(std::string line) {
 
   return commands;
 }
+
+// takes fen-generated board, applies moves
+static GameState moveParser(std::vector<std::string> moves,
+                            GameState startingState) {
+  // convert moves to Move objects
+  GameState state = startingState;
+  for (std::string m : moves) {
+    Move move;
+    move.from.x = m[0] - 'a';
+    move.from.y = '8' - m[1];
+    move.to.x = m[2] - 'a';
+    move.to.y = '8' - m[3];
+    if (m.size() >= 5) {
+      bool white = state.sideToMove == 0;
+      switch (m[4]) {
+      case 'q':
+        move.promotion = white ? W_QUEEN : B_QUEEN;
+        break;
+      case 'r':
+        move.promotion = white ? W_ROOK : B_ROOK;
+        break;
+      case 'b':
+        move.promotion = white ? W_BISHOP : B_BISHOP;
+        break;
+      case 'n':
+        move.promotion = white ? W_KNIGHT : B_KNIGHT;
+        break;
+      }
+    }
+    state = makeMove(state, move);
+  }
+  return state;
+}
+
 // fen parsing
 GameState UciParser::positionParse(std::vector<std::string> fenInput) {
   int BOARD[8][8];
@@ -37,6 +68,11 @@ GameState UciParser::positionParse(std::vector<std::string> fenInput) {
   // either fen or startpos
   if (fenInput[0] == "startpos") {
     startPos(state);
+    if (fenInput.size() > 2) {
+      state = moveParser(
+          std::vector<std::string>(fenInput.begin() + 2, fenInput.end()),
+          state);
+    }
     return state;
   }
 
@@ -48,41 +84,42 @@ GameState UciParser::positionParse(std::vector<std::string> fenInput) {
   int file = 0;
   for (char c : boardInfo) {
     if (c == 'R') {
-      state.board[file][rank] = W_ROOK;
+      state.board[rank][file] = W_ROOK;
       file++;
     } else if (c == 'Q') {
-      state.board[file][rank] = W_QUEEN;
+      state.board[rank][file] = W_QUEEN;
       file++;
     } else if (c == 'K') {
-      state.board[file][rank] = W_KING;
+      state.board[rank][file] = W_KING;
       state.kingPos[0] = {file, rank};
+      file++;
     } else if (c == 'N') {
-      state.board[file][rank] = W_KNIGHT;
+      state.board[rank][file] = W_KNIGHT;
       file++;
     } else if (c == 'B') {
-      state.board[file][rank] = W_BISHOP;
+      state.board[rank][file] = W_BISHOP;
       file++;
     } else if (c == 'P') {
-      state.board[file][rank] = W_PAWN;
+      state.board[rank][file] = W_PAWN;
       file++;
     } else if (c == 'r') {
-      state.board[file][rank] = B_ROOK;
+      state.board[rank][file] = B_ROOK;
       file++;
     } else if (c == 'q') {
-      state.board[file][rank] = B_QUEEN;
+      state.board[rank][file] = B_QUEEN;
       file++;
     } else if (c == 'k') {
-      state.board[file][rank] = B_KING;
+      state.board[rank][file] = B_KING;
       state.kingPos[1] = {file, rank};
       file++;
     } else if (c == 'n') {
-      state.board[file][rank] = B_KNIGHT;
+      state.board[rank][file] = B_KNIGHT;
       file++;
     } else if (c == 'b') {
-      state.board[file][rank] = B_BISHOP;
+      state.board[rank][file] = B_BISHOP;
       file++;
     } else if (c == 'p') {
-      state.board[file][rank] = B_PAWN;
+      state.board[rank][file] = B_PAWN;
       file++;
     } else if (c == '/') {
       std::copy(rankbuffer.begin(), rankbuffer.end(), BOARD[rank]);
@@ -93,7 +130,7 @@ GameState UciParser::positionParse(std::vector<std::string> fenInput) {
       // should be a number of empty spaces
       int empty = c - '0';
       for (int i = 0; i < empty; i++) {
-        state.board[file][rank] = EMPTY;
+        state.board[rank][file] = EMPTY;
         file++;
       };
     }
@@ -109,7 +146,16 @@ GameState UciParser::positionParse(std::vector<std::string> fenInput) {
 
   // next grab the castling
   std::string castling = fenInput[3];
-  // TODO - implement castling logic
+  for (char c : castling) {
+    if (c == 'K')
+      state.castling |= W_KINGSIDE;
+    else if (c == 'Q')
+      state.castling |= W_QUEENSIDE;
+    else if (c == 'k')
+      state.castling |= B_KINGSIDE;
+    else if (c == 'q')
+      state.castling |= B_QUEENSIDE;
+  }
 
   // All of the following parameters are yet to be implemented in game logic.
   // Likely, the GameState struct needs to be expanded.
@@ -119,33 +165,24 @@ GameState UciParser::positionParse(std::vector<std::string> fenInput) {
 
   std::string fullmove = fenInput[6];
 
+  // parse remaining moves
+  if (fenInput.size() >
+      8) { // check if there exists a moves section in the input
+    state = moveParser(
+        std::vector<std::string>(fenInput.begin() + 8, fenInput.end()), state);
+  }
+
   return state;
 }
 
-// check for input
-void UciParser::poll() {
-  std::string input;
-  std::getline(std::cin, input);
-  std::vector<std::string> commands = commandParse(input);
-  GameState state;
+std::vector<std::string> UciParser::split(std::string line) {
+  std::vector<std::string> out;
+  std::istringstream iss(line);
+  std::string buffer;
 
-  if (commands[0] == "uci") {
-    output.uciHandshake();
+  while (iss >> buffer) {
+    out.push_back(buffer);
   }
-  if (commands[0] == "isready") {
-    output.uciReady();
-  }
-  if (commands[0] == "position") {
-    GameState state = positionParse(
-        std::vector<std::string>(std::next(commands.begin()), commands.end()));
-  }
-  if (commands[0] == "go") {
-    evaluatedMove bestMove = Minimax(state, state.sideToMove);
-    output.sendMove(bestMove);
-  }
-  if (commands[0] == "stop") {
-  }
-  if (commands[0] == "quit") {
-    // quit progam somehow?
-  }
+
+  return out;
 }

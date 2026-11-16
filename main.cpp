@@ -1,5 +1,6 @@
 #include "Moves.h"
 #include "TextureManager.h"
+#include "UCI/GameManager.h"
 #include "UCI/UciOut.h"
 #include "gui.h"
 #include "minimax.h"
@@ -184,11 +185,18 @@ void drawPieces(int board[][8], sf::RenderWindow *win,
 }
 
 // wrapper function to time our minimax algorithm per move
-evaluatedMove algorithmMove(GameState state, int side) {
+evaluatedMove algorithmMove(GameState state) {
   Timer t;
-  int alpha = -1000000;
-  int beta = 1000000;
-  return Minimax(state, side, alpha, beta);
+  evaluatedMove result;
+
+  stop_search = false;
+  std::thread searchThread([&] { result = newMinimax(state); });
+
+  std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+  stop_search = true;
+
+  searchThread.join();
+  return result;
 }
 
 void renderingThread(sf::RenderWindow *win, GameState *state,
@@ -208,7 +216,13 @@ void renderingThread(sf::RenderWindow *win, GameState *state,
   };
 };
 
-int main() {
+int main(int argc, char *argv[]) {
+  if (argc > 1 && std::string(argv[1]) == "uci") {
+    GameManager manager;
+    manager.uciGameLoop();
+    return 0;
+  }
+
   sf::RenderWindow window(sf::VideoMode({1200, 1200}), "Chess");
   bool set = window.setActive(false);
   window.setPosition({0, 0});
@@ -263,7 +277,7 @@ int main() {
         if (keyboardEvent->code == sf::Keyboard::Key::Backslash) {
           if (game.sideToMove == BLACK) {
             // grab the best move for black, using wrapper function to time it.
-            evaluatedMove bestMove = algorithmMove(game, BLACK);
+            evaluatedMove bestMove = algorithmMove(game);
             output.sendMove(bestMove);
             game = makeMove(game, bestMove);
             if (isCheckmated(game, game.sideToMove)) {

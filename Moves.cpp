@@ -2,8 +2,10 @@
 #include "TextureManager.h"
 #include "simulateMoves.h"
 
+#include <SFML/System/Vector2.hpp>
 #include <algorithm>
 #include <array>
+#include <cstdlib>
 #include <optional>
 #include <vector>
 
@@ -56,7 +58,11 @@ void startPos(GameState &state) {
   state.sideToMove = WHITE;
   state.kingPos[WHITE] = {4, 7};
   state.kingPos[BLACK] = {4, 0};
+  state.castling = W_KINGSIDE | W_QUEENSIDE | B_KINGSIDE | B_QUEENSIDE;
 }
+
+bool isSquareAttacked(int (&BOARD)[8][8], sf::Vector2i target,
+                      int attackerColor);
 
 static void addSlidingMoves(std::vector<Move> &out, int piece, sf::Vector2i pos,
                             int (&BOARD)[8][8],
@@ -119,10 +125,26 @@ std::vector<Move> calculatePossibleMoves(int piece, sf::Vector2i position,
     const int x = position.x;
     const int y = position.y;
 
+    // reaching the last rank generates one move per promotion piece
+    const int promoRank = isWhite ? 0 : 7;
+    const int promoPieces[4] = {isWhite ? W_QUEEN : B_QUEEN,
+                                isWhite ? W_ROOK : B_ROOK,
+                                isWhite ? W_BISHOP : B_BISHOP,
+                                isWhite ? W_KNIGHT : B_KNIGHT};
+    auto addPawnMove = [&](sf::Vector2i to) {
+      if (to.y == promoRank) {
+        for (int p : promoPieces) {
+          moves.push_back(Move{{x, y}, to, p});
+        }
+      } else {
+        moves.push_back(Move{{x, y}, to});
+      }
+    };
+
     // 1 step forward
     int y1 = y + dir;
     if (inBounds(x, y1) && current.board[y1][x] == EMPTY) {
-      moves.push_back(Move{{x, y}, {x, y1}});
+      addPawnMove({x, y1});
 
       // 2 steps forward
       int y2 = y + 2 * dir;
@@ -135,7 +157,7 @@ std::vector<Move> calculatePossibleMoves(int piece, sf::Vector2i position,
       int cx = x + dx;
       int cy = y + dir;
       if (inBounds(cx, cy) && isEnemy(piece, current.board[cy][cx])) {
-        moves.push_back(Move{{x, y}, {cx, cy}});
+        addPawnMove({cx, cy});
       }
     }
   }
@@ -179,6 +201,30 @@ std::vector<Move> calculatePossibleMoves(int piece, sf::Vector2i position,
         if (cell == EMPTY || isEnemy(piece, cell)) {
           moves.push_back(Move{position, {nx, ny}});
         }
+      }
+    }
+
+    // castling: king can't be in check or pass through an attacked square.
+    // landing in check is filtered out by removeIllegalMoves.
+    const int homeRank = isWhite ? 7 : 0;
+    const int enemy = myColor ^ 1;
+    const int ownRook = isWhite ? W_ROOK : B_ROOK;
+    const int kingSide = isWhite ? W_KINGSIDE : B_KINGSIDE;
+    const int queenSide = isWhite ? W_QUEENSIDE : B_QUEENSIDE;
+    int(&b)[8][8] = current.board;
+
+    if (position.x == 4 && position.y == homeRank &&
+        !isSquareAttacked(b, position, enemy)) {
+      if ((current.castling & kingSide) && b[homeRank][7] == ownRook &&
+          b[homeRank][5] == EMPTY && b[homeRank][6] == EMPTY &&
+          !isSquareAttacked(b, {5, homeRank}, enemy)) {
+        moves.push_back(Move{position, {6, homeRank}});
+      }
+      if ((current.castling & queenSide) && b[homeRank][0] == ownRook &&
+          b[homeRank][1] == EMPTY && b[homeRank][2] == EMPTY &&
+          b[homeRank][3] == EMPTY &&
+          !isSquareAttacked(b, {3, homeRank}, enemy)) {
+        moves.push_back(Move{position, {2, homeRank}});
       }
     }
   }
@@ -305,8 +351,13 @@ bool isSquareAttacked(int (&BOARD)[8][8], sf::Vector2i target,
   return false;
 }
 
-vector<Move> gatherMoves(GameState state, int side) {
+// takes a priority parameter, and always places that move first. The move will
+// invariably be repeated.
+vector<Move> gatherMoves(GameState state, int side, Move priority) {
   std::vector<Move> moves;
+  if (priority.from != sf::Vector2i{-1, -1}) {
+    moves.push_back(priority);
+  };
   for (int y = 0; y < 8; ++y) {
     for (int x = 0; x < 8; ++x) {
       int piece = state.board[y][x];
@@ -353,6 +404,7 @@ GameState makeMove(const GameState &current, const Move &move,
   sf::Vector2i whiteKingPos = current.kingPos[0];
   sf::Vector2i blackKingPos = current.kingPos[1];
   int turn = current.sideToMove;
+  int castling = current.castling;
 
   if (ok) {
     int piece = BOARD[SELECTED.y][SELECTED.x];
@@ -362,8 +414,47 @@ GameState makeMove(const GameState &current, const Move &move,
     if (piece == W_KING)
       whiteKingPos = {coordinate.x, coordinate.y};
 
+    // promotion: use the requested piece, default to queen (e.g. GUI clicks)
+    if ((piece == W_PAWN && coordinate.y == 0) ||
+        (piece == B_PAWN && coordinate.y == 7)) {
+      if (move.promotion != EMPTY)
+        piece = move.promotion;
+      else
+        piece = (piece == W_PAWN) ? W_QUEEN : B_QUEEN;
+    }
+
     BOARD[SELECTED.y][SELECTED.x] = EMPTY;
     BOARD[coordinate.y][coordinate.x] = piece;
+
+    // castling: king moving two squares also moves the rook
+    if ((piece == W_KING || piece == B_KING) &&
+        std::abs(coordinate.x - SELECTED.x) == 2) {
+      int rank = SELECTED.y;
+      if (coordinate.x == 6) {
+        BOARD[rank][5] = BOARD[rank][7];
+        BOARD[rank][7] = EMPTY;
+      } else {
+        BOARD[rank][3] = BOARD[rank][0];
+        BOARD[rank][0] = EMPTY;
+      }
+    }
+
+    // update castling rights: king moved, or a rook moved / was captured
+    if (piece == W_KING)
+      castling &= ~(W_KINGSIDE | W_QUEENSIDE);
+    if (piece == B_KING)
+      castling &= ~(B_KINGSIDE | B_QUEENSIDE);
+    for (sf::Vector2i sq : {SELECTED, coordinate}) {
+      if (sq == sf::Vector2i{7, 7})
+        castling &= ~W_KINGSIDE;
+      if (sq == sf::Vector2i{0, 7})
+        castling &= ~W_QUEENSIDE;
+      if (sq == sf::Vector2i{7, 0})
+        castling &= ~B_KINGSIDE;
+      if (sq == sf::Vector2i{0, 0})
+        castling &= ~B_QUEENSIDE;
+    }
+
     turn ^= 1;
   }
 
@@ -372,6 +463,7 @@ GameState makeMove(const GameState &current, const Move &move,
   newState.sideToMove = turn;
   newState.kingPos[WHITE] = whiteKingPos;
   newState.kingPos[BLACK] = blackKingPos;
+  newState.castling = castling;
 
   return newState;
 }

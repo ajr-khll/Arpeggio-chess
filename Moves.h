@@ -6,6 +6,15 @@
 struct Move {
   sf::Vector2i from;
   sf::Vector2i to;
+  int promotion = 0; // piece to promote to (e.g. W_QUEEN), 0 if none
+};
+
+// castling rights, stored as bit flags in GameState::castling
+enum CastlingRights {
+  W_KINGSIDE = 1,
+  W_QUEENSIDE = 2,
+  B_KINGSIDE = 4,
+  B_QUEENSIDE = 8
 };
 
 struct Undo {
@@ -19,6 +28,7 @@ struct GameState {
   int board[8][8];
   int sideToMove;
   sf::Vector2i kingPos[2];
+  int castling = 0;
 };
 
 void startPos(GameState &state);
@@ -26,7 +36,8 @@ void startPos(GameState &state);
 std::vector<Move> calculatePossibleMoves(int piece, sf::Vector2i position,
                                          GameState game);
 
-std::vector<Move> gatherMoves(GameState game, int side);
+std::vector<Move> gatherMoves(GameState game, int side,
+                              Move priority = {{-1, -1}, {-1, -1}});
 
 bool isInCheck(GameState current, int color);
 

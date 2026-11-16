@@ -2,6 +2,8 @@
 #include "Moves.h"
 #include "TextureManager.h"
 #include "simulateMoves.h"
+#include <atomic>
+#include <chrono>
 #include <cstddef>
 #include <optional>
 
@@ -204,6 +206,113 @@ evaluatedMove Minimax(GameState state, int side, int alpha, int beta,
       if (beta <= alpha) {
         break;
       }
+    }
+  }
+
+  return bestMove;
+}
+
+std::atomic_bool stop_search{false};
+std::chrono::steady_clock::time_point deadline;
+
+int minimaxScore(GameState state, int maxDepth, int alpha = -1000000,
+                 int beta = 1000000) {
+
+  if (maxDepth == 0) {
+    // base case
+    int score = evaluateScore(state, BLACK);
+    if (score > alpha) {
+      alpha = score;
+    }
+    return score;
+  }
+
+  std::vector<Move> moves = gatherMoves(state, state.sideToMove);
+  if (moves.empty()) {
+    if (isInCheck(state, state.sideToMove)) {
+      // If White is mated, return a very high number (but slightly lower if it
+      // takes longer) If Black is mated, return a very low number (but
+      // slightly higher if it takes longer)
+      return (state.sideToMove == WHITE) ? 1000000 + maxDepth
+                                         : -1000000 - maxDepth;
+    } else {
+      return 0;
+    }
+  }
+  int score = (state.sideToMove == BLACK) ? -10000000 : 10000000;
+
+  for (Move move : moves) {
+    if (std::chrono::steady_clock::now() > deadline) {
+      stop_search = true;
+    }
+    if (stop_search) {
+      return -100000;
+    }
+    int moveScore =
+        minimaxScore(simulateMove(state, move), maxDepth - 1, alpha, beta);
+    if (state.sideToMove == BLACK) {
+      // Black maximizes
+
+      if (moveScore > alpha) {
+        alpha = moveScore;
+      }
+      if (moveScore > score) {
+        score = moveScore;
+      }
+      if (alpha >= beta) {
+        break;
+      }
+    } else if (state.sideToMove == WHITE) {
+      // White minimizes
+      if (moveScore < beta) {
+        beta = moveScore;
+      }
+      if (moveScore < score) {
+        score = moveScore;
+      }
+      if (beta <= alpha) {
+        break;
+      }
+    }
+  }
+
+  return score; // score of this move
+}
+
+evaluatedMove rootSearch(GameState state, int maxDepth,
+                         Move lastBest = {{-1, -1}, {-1, -1}}) {
+  std::vector<Move> moves = gatherMoves(state, state.sideToMove, lastBest);
+  evaluatedMove bestMove{{{-1, -1}, {-1, -1}},
+                         (state.sideToMove == BLACK) ? -10000000 : 10000000};
+  for (Move move : moves) {
+    int score = minimaxScore(simulateMove(state, move), maxDepth - 1);
+    if (std::chrono::steady_clock::now() > deadline) {
+      stop_search = true;
+    }
+    if (stop_search) {
+      return {{{-1, -1}, {-1, -1}},
+              -1000}; // don't trust anything from this branch,
+      // we haven't considered all enemy responses.
+    }
+    if (score > bestMove.score && state.sideToMove == BLACK) {
+      bestMove = {move, score};
+    } else if (score < bestMove.score && state.sideToMove == WHITE) {
+      bestMove = {move, score};
+    }
+  }
+  return bestMove;
+};
+
+// rewrite of Minimax algorithm with iterative deepening
+evaluatedMove newMinimax(GameState state) {
+  evaluatedMove bestMove{{{-1, -1}, {-1, -1}}};
+  for (int d = 1; d < 64; d++) {
+    if (stop_search) {
+      return bestMove;
+    }
+    evaluatedMove algoMove = rootSearch(state, d, bestMove);
+    if (!stop_search) {
+      bestMove = algoMove;
     }
   }
 
