@@ -399,10 +399,10 @@ int minimaxScore(GameState state, int maxDepth, int currDepth,
   if (state.halfmoveClock >= 100 && !isCheckmated(state, state.sideToMove)) {
     return 0;
   }
-
+  int remainingDepth = maxDepth - currDepth;
   Entry *probe_result = zobrist_TT.probe(state.hash);
-  if (probe_result && probe_result->depth >= maxDepth) {
-    int ttScore = scoreFromTT(probe_result->score, maxDepth);
+  if (probe_result && probe_result->depth >= remainingDepth) {
+    int ttScore = scoreFromTT(probe_result->score, remainingDepth);
     // Check bound-type
     if (probe_result->bound_type == UPPER) {
       if (ttScore < beta) {
@@ -420,14 +420,11 @@ int minimaxScore(GameState state, int maxDepth, int currDepth,
     }
   }
 
-  if (maxDepth - currDepth == 0 && maxDepth >= 3) {
+  if (remainingDepth == 0) {
     // base case
     int score = evaluateScore(state, BLACK);
     // consider if any standing moves are blunders
     score = quiescenceSearch(state, alpha, beta);
-    return score;
-  } else if (maxDepth - currDepth == 0) {
-    int score = evaluateScore(state, BLACK);
     return score;
   }
   std::vector<Move> moves = gatherMoves(state, state.sideToMove);
@@ -441,8 +438,8 @@ int minimaxScore(GameState state, int maxDepth, int currDepth,
       // If White is mated, return a very high number (but slightly lower if
       // it takes longer) If Black is mated, return a very low number (but
       // slightly higher if it takes longer)
-      return (state.sideToMove == WHITE) ? 1000000 + maxDepth
-                                         : -1000000 - maxDepth;
+      return (state.sideToMove == WHITE) ? 1000000 + remainingDepth
+                                         : -1000000 - remainingDepth;
     } else {
       return 0;
     }
@@ -500,8 +497,8 @@ int minimaxScore(GameState state, int maxDepth, int currDepth,
   } else {
     entry.bound_type = EXACT;
   }
-  entry.depth = maxDepth;
-  entry.score = scoreToTT(score, maxDepth);
+  entry.depth = remainingDepth;
+  entry.score = scoreToTT(score, remainingDepth);
   entry.hash = state.hash;
   entry.bestMove = encodeMove(bestMove);
   zobrist_TT.store(entry);
@@ -514,10 +511,12 @@ evaluatedMove rootSearch(GameState state, int maxDepth,
   moveToFront(moves, lastBest);
   evaluatedMove bestMove{{{-1, -1}, {-1, -1}},
                          (state.sideToMove == BLACK) ? -10000000 : 10000000};
+  int alpha = -10000000;
+  int beta = 10000000;
   for (Move move : moves) {
     GameState simulated = simulateMove(state, move);
     positionHistory.push_back(simulated.hash);
-    int score = minimaxScore(simulated, maxDepth, 1);
+    int score = minimaxScore(simulated, maxDepth, 1, alpha, beta);
     positionHistory.pop_back();
     if (std::chrono::steady_clock::now() > deadline) {
       stop_search = true;
@@ -530,6 +529,11 @@ evaluatedMove rootSearch(GameState state, int maxDepth,
       bestMove = {move, score};
     } else if (score < bestMove.score && state.sideToMove == WHITE) {
       bestMove = {move, score};
+    }
+    if (state.sideToMove == BLACK && score > alpha) {
+      alpha = score;
+    } else if (state.sideToMove == WHITE && score < beta) {
+      beta = score;
     }
   }
   return bestMove;
