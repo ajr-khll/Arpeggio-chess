@@ -33,6 +33,8 @@ LATEST     := Engines/Arpeggio-$(CUR_VERSION)/Arpeggio-$(CUR_VERSION)
 
 SRCS   := main.cpp Moves.cpp simulateMoves.cpp minimax.cpp gui.cpp UCI/UciOut.cpp UCI/UciParser.cpp UCI/GameManager.cpp TranspositionTable.cpp
 OBJS   := $(SRCS:.cpp=.o)
+# everything needed to rebuild a version elsewhere (e.g. the Mac test box)
+SNAP_FILES := makefile timer.cpp $(SRCS) $(wildcard *.h UCI/*.h)
 
 # every `make` builds a new version: Engines/Arpeggio-X.Y.Z/ with its .sh
 all: $(TARGET)
@@ -42,11 +44,22 @@ $(TARGET): $(OBJS)
 	$(CXX) $(OBJS) $(LIBS) -o $@ || { rmdir $(ENGINE_DIR); exit 1; }
 	printf '#!/bin/sh\nexec "$$(dirname "$$0")/Arpeggio-$(NEXT_VERSION)" uci\n' > $(SCRIPT)
 	chmod +x $(SCRIPT)
+	tar czf $(ENGINE_DIR)/src.tar.gz $(SNAP_FILES)
 	echo $(NEXT_VERSION) > $(VERSION_FILE)
 	@echo "built Arpeggio $(NEXT_VERSION)"
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+
+# builds the current tree as a given version number WITHOUT bumping VERSION.
+# used by scripts/match.sh to reproduce a laptop version on the Mac from its
+# src.tar.gz, so version numbers stay identical across machines.
+as-version: $(OBJS)
+	@test -n "$(V)" || { echo "usage: make as-version V=X.Y.Z"; exit 1; }
+	mkdir -p Engines/Arpeggio-$(V)
+	$(CXX) $(OBJS) $(LIBS) -o Engines/Arpeggio-$(V)/Arpeggio-$(V)
+	printf '#!/bin/sh\nexec "$$(dirname "$$0")/Arpeggio-$(V)" uci\n' > Engines/Arpeggio-$(V)/arpeggio-$(V).sh
+	chmod +x Engines/Arpeggio-$(V)/arpeggio-$(V).sh
 
 # runs the latest built version (GUI mode) without building a new one
 run:
@@ -56,4 +69,4 @@ run:
 clean:
 	rm -f $(OBJS)
 
-.PHONY: all run clean
+.PHONY: all run clean as-version

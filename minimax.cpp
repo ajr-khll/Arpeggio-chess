@@ -8,7 +8,10 @@
 #include <atomic>
 #include <chrono>
 #include <cstddef>
+#include <cstdlib>
+#include <iostream>
 #include <optional>
+#include <string>
 
 // Array for values of pieces
 // 0: Empty
@@ -131,23 +134,72 @@ int positionalScore(int piece, int x, int y) {
   }
 }
 
-int evaluateScore(GameState state, int color) {
-  // Given a game state, return an integer value for the score of the game
-  int score = 0;
+static const int king_edge_bonus[64] = {
+    60, 50, 40, 30, 30, 40, 50, 60, 50, 40, 30, 20, 20, 30, 40, 50,
+    40, 30, 20, 10, 10, 20, 30, 40, 30, 20, 10, 0,  0,  10, 20, 30,
+    30, 20, 10, 0,  0,  10, 20, 30, 40, 30, 20, 10, 10, 20, 30, 40,
+    50, 40, 30, 20, 20, 30, 40, 50, 60, 50, 40, 30, 30, 40, 50, 60};
+
+static const int STARTING_MATERIAL = 8000;
+
+static double endgameWeight(const GameState &state) {
+  int material = 0;
   for (int y = 0; y < 8; ++y) {
     for (int x = 0; x < 8; ++x) {
       int piece = state.board[y][x];
-      if (colorOf(piece) == color) {
-        score += PIECE_VALUES[piece];
-        score += positionalScore(piece, x, y);
+      if (piece != EMPTY && piece != W_KING && piece != B_KING)
+        material += PIECE_VALUES[piece];
+    }
+  }
+  double weight = 1.0 - static_cast<double>(material) / STARTING_MATERIAL;
+  return std::clamp(weight, 0.0, 1.0);
+}
 
+static int kingSquareScore(int piece, int x, int y, double endgame) {
+  int middlegame = positionalScore(piece, x, y);
+  int edge = king_edge_bonus[y * 8 + x];
+  return static_cast<int>((1.0 - endgame) * middlegame - endgame * edge);
+}
+
+static int kingDistance(const GameState &state) {
+  sf::Vector2i white = state.kingPos[WHITE];
+  sf::Vector2i black = state.kingPos[BLACK];
+  return std::abs(white.x - black.x) + std::abs(white.y - black.y);
+}
+
+int evaluateScore(GameState state, int color) {
+  // Given a game state, return an integer value for the score of the game
+  double endgame = endgameWeight(state);
+  int score = 0;
+  int materialLead = 0;
+  for (int y = 0; y < 8; ++y) {
+    for (int x = 0; x < 8; ++x) {
+      int piece = state.board[y][x];
+      if (piece == EMPTY)
+        continue;
+
+      int value = PIECE_VALUES[piece];
+      if (piece == W_KING || piece == B_KING)
+        value += kingSquareScore(piece, x, y, endgame);
+      else
+        value += positionalScore(piece, x, y);
+
+      if (colorOf(piece) == color) {
+        score += value;
+        materialLead += PIECE_VALUES[piece];
       } else {
-        score -= PIECE_VALUES[state.board[y][x]];
-        score -= positionalScore(piece, x, y);
+        score -= value;
+        materialLead -= PIECE_VALUES[piece];
       }
     }
   }
-  return score;
+
+  if (materialLead != 0) {
+    int closeness = 14 - kingDistance(state);
+    int bonus = static_cast<int>(endgame * closeness * 4);
+    score += (materialLead > 0) ? bonus : -bonus;
+  }
+  return score * (200 - state.halfmoveClock) / 200;
 }
 
 // Minimax algorithm, recursive
@@ -218,36 +270,68 @@ evaluatedMove Minimax(GameState state, int side, int alpha, int beta,
 std::atomic_bool stop_search{false};
 std::chrono::steady_clock::time_point deadline;
 std::vector<uint64_t> positionHistory;
+static uint64_t nodeCount = 0;
 
-static bool isRepetition(uint64_t hash) {
-  for (size_t i = 0; i + 1 < positionHistory.size(); ++i) {
+static bool isRepetition(uint64_t hash, int halfmoveClock) {
+  int last = static_cast<int>(positionHistory.size()) - 1;
+  int oldest = std::max(0, last - halfmoveClock);
+  for (int i = last - 2; i >= oldest; i -= 2) {
     if (positionHistory[i] == hash)
       return true;
   }
   return false;
 }
 
+// allow us to check if time is up every 2048 nodes.
+static inline bool isTimeUp() {
+  if ((nodeCount & 2047) == 0 && std::chrono::steady_clock::now() > deadline)
+    stop_search = true;
+  return stop_search;
+}
+
 // follow all capture-to-capture paths on the board to find any potential
 // blunders.
-int quiescenceSearch(GameState state, int alpha, int beta) {
-  int standPat = evaluateScore(state, BLACK);
+int quiescenceSearch(GameState state, int alpha, int beta, int qDepth = 0) {
+  ++nodeCount;
   bool black = state.sideToMove == BLACK;
+  bool inCheck = isInCheck(state, state.sideToMove);
 
-  if (black) {
-    if (standPat >= beta)
-      return standPat;
-    if (standPat > alpha)
-      alpha = standPat;
+  int best;
+  std::vector<Move> moves;
+  if (isTimeUp()) {
+    return 0;
+  }
+  if (inCheck) {
+    moves = gatherMoves(state, state.sideToMove);
+    if (moves.empty()) {
+      return black ? -1000000 : 1000000;
+    }
+    best = black ? -10000000 : 10000000;
   } else {
-    if (standPat <= alpha)
-      return standPat;
-    if (standPat < beta)
-      beta = standPat;
+    int standPat = evaluateScore(state, BLACK);
+
+    if (black) {
+      if (standPat >= beta)
+        return standPat;
+      if (standPat > alpha)
+        alpha = standPat;
+    } else {
+      if (standPat <= alpha)
+        return standPat;
+      if (standPat < beta)
+        beta = standPat;
+    }
+
+    best = standPat;
+    bool includeChecks = (qDepth == 0);
+    moves = gatherMoves(state, state.sideToMove, true, includeChecks);
   }
 
-  int best = standPat;
-  for (Move move : gatherMoves(state, state.sideToMove, true)) {
-    int score = quiescenceSearch(simulateMove(state, move), alpha, beta);
+  for (Move move : moves) {
+    int score =
+        quiescenceSearch(simulateMove(state, move), alpha, beta, qDepth + 1);
+    if (isTimeUp())
+      return 0;
     if (black) {
       if (score > best)
         best = score;
@@ -304,10 +388,15 @@ static void moveToFront(std::vector<Move> &moves, const Move &target) {
   }
 }
 
-int minimaxScore(GameState state, int maxDepth, int alpha = -1000000,
-                 int beta = 1000000) {
+int minimaxScore(GameState state, int maxDepth, int currDepth,
+                 int alpha = -1000000, int beta = 1000000) {
+  ++nodeCount;
   // check if this position is in our TranspositionTable
-  if (isRepetition(state.hash)) {
+  if (isRepetition(state.hash, state.halfmoveClock)) {
+    return 0;
+  }
+
+  if (state.halfmoveClock >= 100 && !isCheckmated(state, state.sideToMove)) {
     return 0;
   }
 
@@ -331,11 +420,14 @@ int minimaxScore(GameState state, int maxDepth, int alpha = -1000000,
     }
   }
 
-  if (maxDepth == 0) {
+  if (maxDepth - currDepth == 0 && maxDepth >= 3) {
     // base case
     int score = evaluateScore(state, BLACK);
     // consider if any standing moves are blunders
     score = quiescenceSearch(state, alpha, beta);
+    return score;
+  } else if (maxDepth - currDepth == 0) {
+    int score = evaluateScore(state, BLACK);
     return score;
   }
   std::vector<Move> moves = gatherMoves(state, state.sideToMove);
@@ -369,7 +461,8 @@ int minimaxScore(GameState state, int maxDepth, int alpha = -1000000,
     }
     GameState simulated = simulateMove(state, move);
     positionHistory.push_back(simulated.hash);
-    int moveScore = minimaxScore(simulated, maxDepth - 1, alpha, beta);
+    int moveScore =
+        minimaxScore(simulated, maxDepth, currDepth + 1, alpha, beta);
     positionHistory.pop_back();
     if (stop_search) {
       return -100000;
@@ -424,15 +517,14 @@ evaluatedMove rootSearch(GameState state, int maxDepth,
   for (Move move : moves) {
     GameState simulated = simulateMove(state, move);
     positionHistory.push_back(simulated.hash);
-    int score = minimaxScore(simulated, maxDepth - 1);
+    int score = minimaxScore(simulated, maxDepth, 1);
     positionHistory.pop_back();
     if (std::chrono::steady_clock::now() > deadline) {
       stop_search = true;
     }
     if (stop_search) {
-      return {{{-1, -1}, {-1, -1}},
-              -1000}; // don't trust anything from this branch,
-      // we haven't considered all enemy responses.
+      return bestMove; // Technically we shouldn't trust this branch but we
+                       // can't return -1,-1
     }
     if (score > bestMove.score && state.sideToMove == BLACK) {
       bestMove = {move, score};
@@ -444,8 +536,54 @@ evaluatedMove rootSearch(GameState state, int maxDepth,
 };
 
 // rewrite of Minimax algorithm with iterative deepening
+static std::string moveToUci(const Move &move) {
+  std::string text;
+  text += static_cast<char>('a' + move.from.x);
+  text += static_cast<char>('8' - move.from.y);
+  text += static_cast<char>('a' + move.to.x);
+  text += static_cast<char>('8' - move.to.y);
+
+  switch (move.promotion) {
+  case W_QUEEN:
+  case B_QUEEN:
+    text += 'q';
+    break;
+  case W_ROOK:
+  case B_ROOK:
+    text += 'r';
+    break;
+  case W_BISHOP:
+  case B_BISHOP:
+    text += 'b';
+    break;
+  case W_KNIGHT:
+  case B_KNIGHT:
+    text += 'n';
+    break;
+  }
+  return text;
+}
+
+static std::string uciScore(int blackScore, int sideToMove, int depth) {
+  int score = (sideToMove == BLACK) ? blackScore : -blackScore;
+
+  if (std::abs(score) >= MATE_THRESHOLD) {
+    int remainingDepth = std::abs(score) - 1000000;
+    int pliesToMate = depth - remainingDepth;
+    int movesToMate = (pliesToMate + 1) / 2;
+    if (score < 0)
+      movesToMate = -movesToMate;
+    return "mate " + std::to_string(movesToMate);
+  }
+
+  return "cp " + std::to_string(score);
+}
+
 evaluatedMove newMinimax(GameState state) {
   evaluatedMove bestMove{{{-1, -1}, {-1, -1}}};
+  nodeCount = 0;
+  auto start = std::chrono::steady_clock::now();
+
   for (int d = 1; d < 64; d++) {
     if (stop_search) {
       return bestMove;
@@ -453,7 +591,25 @@ evaluatedMove newMinimax(GameState state) {
     evaluatedMove algoMove = rootSearch(state, d, bestMove);
     if (!stop_search) {
       bestMove = algoMove;
-    }
+
+      auto elapsed = std::chrono::steady_clock::now() - start;
+      long long ms =
+          std::chrono::duration_cast<std::chrono::milliseconds>(elapsed)
+              .count();
+      long long nps =
+          (ms > 0) ? static_cast<long long>(nodeCount) * 1000 / ms : 0;
+
+      std::cout << "info depth " << d << " score "
+                << uciScore(bestMove.score, state.sideToMove, d) << " nodes "
+                << nodeCount << " nps " << nps << " time " << ms << " pv "
+                << moveToUci(bestMove) << std::endl;
+    } else if (algoMove.from.x != -1) {
+      // not a garbage move
+      bestMove = algoMove;
+    } else if (bestMove.from.x == -1)
+      bestMove = {gatherMoves(state, state.sideToMove)[0],
+                  0}; // just return the first legal move if we didn't even have
+                      // time to return rootSearch()
   }
 
   return bestMove;

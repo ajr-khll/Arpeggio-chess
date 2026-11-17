@@ -52,6 +52,10 @@ void GameManager::uciGameLoop() {
       startSearch();
     } else if (parsedInput[0] == "stop") {
       stopSearch();
+    } else if (parsedInput[0] == "quit") {
+      stopSearch();
+      return;
     }
   }
+  stopSearch();
 }

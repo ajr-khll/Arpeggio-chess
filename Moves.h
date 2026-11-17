@@ -36,6 +36,7 @@ struct GameState {
   int sideToMove;
   sf::Vector2i kingPos[2];
   int castling = 0;
+  int halfmoveClock = 0;
   uint64_t hash = 0;
   void setHash();
 };
@@ -44,11 +45,12 @@ void startPos(GameState &state);
 
 std::vector<Move> calculatePossibleMoves(int piece, sf::Vector2i position,
                                          GameState game,
-                                         bool capturesOnly = false);
+                                         bool capturesOnly = false,
+                                         bool includeChecks = false);
 
 std::vector<Move> gatherMoves(GameState game, int side,
                               bool capturesOnly = false,
-                              Move priority = {{-1, -1}, {-1, -1}});
+                              bool includeChecks = false);
 
 bool isInCheck(GameState current, int color);
 

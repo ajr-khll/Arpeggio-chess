@@ -167,6 +167,7 @@ GameState UciParser::positionParse(std::vector<std::string> fenInput) {
   std::string enPassantSquare = fenInput[4];
 
   std::string halfmove = fenInput[5];
+  state.halfmoveClock = std::stoi(halfmove);
 
   std::string fullmove = fenInput[6];
 

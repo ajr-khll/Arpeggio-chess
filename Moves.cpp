@@ -108,7 +108,8 @@ std::vector<Move> removeIllegalMoves(int piece, std::vector<Move> moves,
 }
 
 std::vector<Move> calculatePossibleMoves(int piece, sf::Vector2i position,
-                                         GameState current, bool capturesOnly) {
+                                         GameState current, bool capturesOnly,
+                                         bool includeChecks) {
   std::vector<Move> moves;
 
   if (piece == EMPTY)
@@ -251,11 +252,25 @@ std::vector<Move> calculatePossibleMoves(int piece, sf::Vector2i position,
   }
 
   if (capturesOnly) {
-    moves.erase(std::remove_if(moves.begin(), moves.end(),
-                               [&](const Move &m) {
-                                 return current.board[m.to.y][m.to.x] == EMPTY;
-                               }),
-                moves.end());
+    std::vector<Move> captures;
+
+    for (const Move &move : moves) {
+      int target = current.board[move.to.y][move.to.x];
+      bool isCapture = (target != EMPTY);
+
+      bool givesCheck = false;
+      if (includeChecks && !isCapture) {
+        GameState after = makeMove(current, move);
+        int opponent = colorOf(piece) ^ 1;
+        givesCheck = isInCheck(after, opponent);
+      }
+
+      if (isCapture || givesCheck) {
+        captures.push_back(move);
+      }
+    }
+
+    moves = captures;
   }
 
   std::vector<Move> validMoves = removeIllegalMoves(piece, moves, current);
@@ -361,20 +376,16 @@ bool isSquareAttacked(int (&BOARD)[8][8], sf::Vector2i target,
   return false;
 }
 
-// takes a priority parameter, and always places that move first. The move will
-// invariably be repeated.
 vector<Move> gatherMoves(GameState state, int side, bool capturesOnly,
-                         Move priority) {
+                         bool includeChecks) {
   std::vector<Move> moves;
-  if (priority.from != sf::Vector2i{-1, -1}) {
-    moves.push_back(priority);
-  };
   for (int y = 0; y < 8; ++y) {
     for (int x = 0; x < 8; ++x) {
       int piece = state.board[y][x];
       if (colorOf(piece) == side) {
         std::vector<Move> pieceMoves =
-            calculatePossibleMoves(piece, {x, y}, state, capturesOnly);
+            calculatePossibleMoves(piece, {x, y}, state, capturesOnly,
+                                   includeChecks);
         moves.insert(moves.end(), pieceMoves.begin(), pieceMoves.end());
       }
     }
@@ -417,9 +428,14 @@ GameState makeMove(const GameState &current, const Move &move,
   sf::Vector2i blackKingPos = current.kingPos[1];
   int turn = current.sideToMove;
   int castling = current.castling;
+  int halfmoveClock = current.halfmoveClock;
 
   if (ok) {
     int piece = BOARD[SELECTED.y][SELECTED.x];
+
+    bool pawnMove = (piece == W_PAWN || piece == B_PAWN);
+    bool capture = (BOARD[coordinate.y][coordinate.x] != EMPTY);
+    halfmoveClock = (pawnMove || capture) ? 0 : halfmoveClock + 1;
 
     if (piece == B_KING)
       blackKingPos = {coordinate.x, coordinate.y};
@@ -476,6 +492,7 @@ GameState makeMove(const GameState &current, const Move &move,
   newState.kingPos[WHITE] = whiteKingPos;
   newState.kingPos[BLACK] = blackKingPos;
   newState.castling = castling;
+  newState.halfmoveClock = halfmoveClock;
 
   newState.hash = zobristHashMove(before.hash, before, move, newState, seeded);
 
