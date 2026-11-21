@@ -1,0 +1,143 @@
+[Event "?"]
+[Site "?"]
+[Date "2026.11.16"]
+[Round "1"]
+[White "Arpeggio-1.0.9"]
+[Black "Stockfish-1320"]
+[Result "0-1"]
+[ECO "C10"]
+[GameDuration "00:00:01"]
+[GameEndTime "2026-11-16T21:44:06.698 PST"]
+[GameStartTime "2026-11-16T21:44:05.048 PST"]
+[Opening "French"]
+[PlyCount "18"]
+[Termination "illegal move"]
+[TimeControl "10+0.1"]
+[Variation "Rubinstein variation"]
+
+1. e4 {book} e6 {book} 2. d4 {book} d5 {book} 3. Nc3 {book} dxe4 {book}
+4. Nxe4 {book} Nd7 {book} 5. Nf3 {book} Ngf6 {book} 6. Bg5 {book} Be7 {book}
+7. Nxf6+ {book} Nxf6 {book} 8. Bd3 {book} h6 {book} 9. Bb5+ {+0.29/2 0.56s}
+c6 {+0.43/14 0.52s, White makes an illegal move: `9`9} 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "2026.11.16"]
+[Round "1"]
+[White "Stockfish-1320"]
+[Black "Arpeggio-1.0.9"]
+[Result "0-1"]
+[ECO "C10"]
+[GameDuration "00:00:19"]
+[GameEndTime "2026-11-16T21:44:24.535 PST"]
+[GameStartTime "2026-11-16T21:44:05.050 PST"]
+[Opening "French"]
+[PlyCount "56"]
+[TimeControl "10+0.1"]
+[Variation "Rubinstein variation"]
+
+1. e4 {book} e6 {book} 2. d4 {book} d5 {book} 3. Nc3 {book} dxe4 {book}
+4. Nxe4 {book} Nd7 {book} 5. Nf3 {book} Ngf6 {book} 6. Bg5 {book} Be7 {book}
+7. Nxf6+ {book} Nxf6 {book} 8. Bd3 {book} h6 {book} 9. Bh4 {+0.59/18 2.1s}
+O-O {-0.29/2 0.56s} 10. a3 {+0.49/13 0.33s} Nd5 {-0.15/2 0.53s}
+11. Bxe7 {+0.79/15 0.48s} Qxe7 {-0.24/4 0.51s} 12. Ne5 {+0.14/17 1.9s}
+Bd7 {-0.19/3 0.49s} 13. Qf3 {+0.40/12 0.28s} Rad8 {-0.29/2 0.47s}
+14. c4 {+1.77/11 0.16s} Nf6 {-1.19/2 0.45s} 15. Qxb7 {+2.17/14 0.42s}
+Qd6 {-2.11/2 0.43s} 16. Rd1 {+3.63/15 0.56s} Rb8 {-1.02/2 0.42s}
+17. c5 {+0.91/16 0.55s} Qxd4 {-0.03/2 0.40s} 18. Qxc7 {0.00/19 1.7s}
+Rbc8 {-1.25/1 0.39s} 19. Nxd7 {+0.18/14 0.23s} Rxc7 {-1.30/2 0.37s}
+20. Nxf8 {+0.16/15 0.35s} Kxf8 {+3.78/3 0.36s} 21. Be2 {0.00/13 1.3s}
+Qxb2 {+5.05/4 0.34s} 22. c6 {-7.63/14 0.86s} Qc3+ {+5.14/3 0.33s}
+23. Rd2 {-7.99/14 0.11s} Ne4 {+9.00/3 0.32s} 24. g3 {-8.70/14 0.066s}
+Qxd2+ {+10.41/3 0.31s} 25. Kf1 {-16.50/15 0.13s} Rxc6 {+13.68/3 0.30s}
+26. g4 {-20.55/22 0.13s} Qd4 {+14.84/3 0.29s} 27. Ke1 {-M4/245 0.006s}
+Rc1+ {+M3/3 0.28s} 28. Bd1 {-M2/1 0s} Qxd1# {+M1/3 0.27s, Black mates} 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "2026.11.16"]
+[Round "2"]
+[White "Arpeggio-1.0.9"]
+[Black "Stockfish-1320"]
+[Result "0-1"]
+[ECO "B90"]
+[GameDuration "00:00:01"]
+[GameEndTime "2026-11-16T21:44:06.849 PST"]
+[GameStartTime "2026-11-16T21:44:05.047 PST"]
+[Opening "Sicilian"]
+[PlyCount "18"]
+[Termination "illegal move"]
+[TimeControl "10+0.1"]
+[Variation "Najdorf, Byrne (English) attack"]
+
+1. e4 {book} c5 {book} 2. Nf3 {book} d6 {book} 3. d4 {book} cxd4 {book}
+4. Nxd4 {book} Nf6 {book} 5. Nc3 {book} a6 {book} 6. Be3 {book} e5 {book}
+7. Nde2 {book} Be6 {book} 8. Ng3 {book} h5 {book} 9. Bd3 {+0.79/1 0.56s}
+h4 {+0.63/14 0.53s, White makes an illegal move: `9`9} 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "2026.11.16"]
+[Round "2"]
+[White "Stockfish-1320"]
+[Black "Arpeggio-1.0.9"]
+[Result "1-0"]
+[ECO "B90"]
+[GameDuration "00:00:05"]
+[GameEndTime "2026-11-16T21:44:10.097 PST"]
+[GameStartTime "2026-11-16T21:44:05.049 PST"]
+[Opening "Sicilian"]
+[PlyCount "23"]
+[Termination "illegal move"]
+[TimeControl "10+0.1"]
+[Variation "Najdorf, Byrne (English) attack"]
+
+1. e4 {book} c5 {book} 2. Nf3 {book} d6 {book} 3. d4 {book} cxd4 {book}
+4. Nxd4 {book} Nf6 {book} 5. Nc3 {book} a6 {book} 6. Be3 {book} e5 {book}
+7. Nde2 {book} Be6 {book} 8. Ng3 {book} h5 {book} 9. Be2 {-0.11/14 1.0s}
+h4 {-0.65/1 0.60s} 10. Nf1 {+0.19/13 0.41s} Nc6 {+0.19/1 0.56s}
+11. Bg5 {-0.22/15 0.95s} Qb6 {+0.22/2 0.53s}
+12. Rb1 {-0.33/13 0.43s, Black makes an illegal move: `9`9} 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "2026.11.16"]
+[Round "3"]
+[White "Arpeggio-1.0.9"]
+[Black "Stockfish-1320"]
+[Result "0-1"]
+[ECO "A00"]
+[GameDuration "00:00:03"]
+[GameEndTime "2026-11-16T21:44:08.439 PST"]
+[GameStartTime "2026-11-16T21:44:05.042 PST"]
+[Opening "Benko's Opening"]
+[PlyCount "18"]
+[Termination "illegal move"]
+[TimeControl "10+0.1"]
+
+1. g3 {book} e5 {book} 2. c4 {book} d6 {book} 3. Bg2 {book} Nc6 {book}
+4. Nc3 {book} g6 {book} 5. d3 {book} Bg7 {book} 6. Rb1 {book} Be6 {book}
+7. Nd5 {book} Qd7 {book} 8. Qa4 {book} f5 {book} 9. Nf3 {0.00/1 0.58s}
+e4 {-0.29/16 2.3s, White makes an illegal move: `9`9} 0-1
+
+[Event "?"]
+[Site "?"]
+[Date "2026.11.16"]
+[Round "3"]
+[White "Stockfish-1320"]
+[Black "Arpeggio-1.0.9"]
+[Result "1-0"]
+[ECO "A00"]
+[GameDuration "00:00:02"]
+[GameEndTime "2026-11-16T21:44:07.610 PST"]
+[GameStartTime "2026-11-16T21:44:05.044 PST"]
+[Opening "Benko's Opening"]
+[PlyCount "17"]
+[Termination "illegal move"]
+[TimeControl "10+0.1"]
+
+1. g3 {book} e5 {book} 2. c4 {book} d6 {book} 3. Bg2 {book} Nc6 {book}
+4. Nc3 {book} g6 {book} 5. d3 {book} Bg7 {book} 6. Rb1 {book} Be6 {book}
+7. Nd5 {book} Qd7 {book} 8. Qa4 {book} f5 {book}
+9. Nf3 {+0.36/18 2.0s, Black makes an illegal move: `9`9} 1-0
+

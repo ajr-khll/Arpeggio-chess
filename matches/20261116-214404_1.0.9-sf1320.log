@@ -1,0 +1,53 @@
+Indexing opening suite...
+Started game 7 of 100 (Arpeggio-1.0.9 vs Stockfish-1320)
+Started game 5 of 100 (Arpeggio-1.0.9 vs Stockfish-1320)
+Started game 6 of 100 (Stockfish-1320 vs Arpeggio-1.0.9)
+Started game 8 of 100 (Stockfish-1320 vs Arpeggio-1.0.9)
+Started game 3 of 100 (Arpeggio-1.0.9 vs Stockfish-1320)
+Started game 1 of 100 (Arpeggio-1.0.9 vs Stockfish-1320)
+Started game 4 of 100 (Stockfish-1320 vs Arpeggio-1.0.9)
+Started game 2 of 100 (Stockfish-1320 vs Arpeggio-1.0.9)
+Finished game 1 (Arpeggio-1.0.9 vs Stockfish-1320): 0-1 {White makes an illegal move: `9`9}
+Score of Arpeggio-1.0.9 vs Stockfish-1320: 0 - 1 - 0  [0.000] 1
+Started game 9 of 100 (Arpeggio-1.0.9 vs Stockfish-1320)
+Finished game 3 (Arpeggio-1.0.9 vs Stockfish-1320): 0-1 {White makes an illegal move: `9`9}
+Score of Arpeggio-1.0.9 vs Stockfish-1320: 0 - 2 - 0  [0.000] 2
+Started game 10 of 100 (Stockfish-1320 vs Arpeggio-1.0.9)
+Finished game 6 (Stockfish-1320 vs Arpeggio-1.0.9): 1-0 {Black makes an illegal move: `9`9}
+Score of Arpeggio-1.0.9 vs Stockfish-1320: 0 - 3 - 0  [0.000] 3
+Started game 11 of 100 (Arpeggio-1.0.9 vs Stockfish-1320)
+Finished game 5 (Arpeggio-1.0.9 vs Stockfish-1320): 0-1 {White makes an illegal move: `9`9}
+Score of Arpeggio-1.0.9 vs Stockfish-1320: 0 - 4 - 0  [0.000] 4
+Started game 12 of 100 (Stockfish-1320 vs Arpeggio-1.0.9)
+Finished game 9 (Arpeggio-1.0.9 vs Stockfish-1320): 0-1 {White makes an illegal move: `9`9}
+Score of Arpeggio-1.0.9 vs Stockfish-1320: 0 - 5 - 0  [0.000] 5
+Started game 13 of 100 (Arpeggio-1.0.9 vs Stockfish-1320)
+Finished game 4 (Stockfish-1320 vs Arpeggio-1.0.9): 1-0 {Black makes an illegal move: `9`9}
+Score of Arpeggio-1.0.9 vs Stockfish-1320: 0 - 6 - 0  [0.000] 6
+Started game 14 of 100 (Stockfish-1320 vs Arpeggio-1.0.9)
+Finished game 11 (Arpeggio-1.0.9 vs Stockfish-1320): 0-1 {White makes an illegal move: `9`9}
+Score of Arpeggio-1.0.9 vs Stockfish-1320: 0 - 7 - 0  [0.000] 7
+Started game 15 of 100 (Arpeggio-1.0.9 vs Stockfish-1320)
+Finished game 12 (Stockfish-1320 vs Arpeggio-1.0.9): 1-0 {Black makes an illegal move: `9`9}
+Score of Arpeggio-1.0.9 vs Stockfish-1320: 0 - 8 - 0  [0.000] 8
+Started game 16 of 100 (Stockfish-1320 vs Arpeggio-1.0.9)
+Finished game 15 (Arpeggio-1.0.9 vs Stockfish-1320): 0-1 {White makes an illegal move: `9`9}
+Score of Arpeggio-1.0.9 vs Stockfish-1320: 0 - 9 - 0  [0.000] 9
+Started game 17 of 100 (Arpeggio-1.0.9 vs Stockfish-1320)
+Finished game 13 (Arpeggio-1.0.9 vs Stockfish-1320): 0-1 {White makes an illegal move: `9`9}
+Score of Arpeggio-1.0.9 vs Stockfish-1320: 0 - 10 - 0  [0.000] 10
+...      Arpeggio-1.0.9 playing White: 0 - 7 - 0  [0.000] 7
+...      Arpeggio-1.0.9 playing Black: 0 - 3 - 0  [0.000] 3
+...      White vs Black: 3 - 7 - 0  [0.300] 10
+Elo difference: -inf +/- nan, LOS: 0.1 %, DrawRatio: 0.0 %
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 18 of 100 (Stockfish-1320 vs Arpeggio-1.0.9)
+Finished game 8 (Stockfish-1320 vs Arpeggio-1.0.9): 1-0 {Black makes an illegal move: `9`9}
+Score of Arpeggio-1.0.9 vs Stockfish-1320: 0 - 11 - 0  [0.000] 11
+Started game 19 of 100 (Arpeggio-1.0.9 vs Stockfish-1320)
+Finished game 16 (Stockfish-1320 vs Arpeggio-1.0.9): 1-0 {Black makes an illegal move: `9`9}
+Score of Arpeggio-1.0.9 vs Stockfish-1320: 0 - 12 - 0  [0.000] 12
+Started game 20 of 100 (Stockfish-1320 vs Arpeggio-1.0.9)
+Finished game 2 (Stockfish-1320 vs Arpeggio-1.0.9): 0-1 {Black mates}
+Score of Arpeggio-1.0.9 vs Stockfish-1320: 1 - 12 - 0  [0.077] 13
+Started game 21 of 100 (Arpeggio-1.0.9 vs Stockfish-1320)

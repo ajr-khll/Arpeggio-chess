@@ -1,0 +1,753 @@
+Indexing opening suite...
+Started game 4 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Started game 1 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Started game 8 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Started game 5 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Started game 2 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Started game 7 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Started game 3 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Started game 6 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 5 (Arpeggio-1.0.15 vs Stockfish-2100): 1/2-1/2 {Draw by 3-fold repetition}
+Started game 9 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 4 (Stockfish-2000 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 10 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 1 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black mates}
+Started game 11 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 8 (Stockfish-2200 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 12 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 3 (Arpeggio-1.0.15 vs Stockfish-2000): 1-0 {White wins by adjudication}
+Started game 13 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 10 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 14 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 2 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 15 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 6 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 16 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 11 (Arpeggio-1.0.15 vs Stockfish-2000): 1-0 {White mates}
+Started game 17 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 9 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               108     268      10   65.0%   10.0% 
+   1 Stockfish-2100                191     nan       2   75.0%   50.0% 
+   2 Stockfish-1900                  0     786       4   50.0%    0.0% 
+   3 Stockfish-2200               -inf     nan       1    0.0%    0.0% 
+   4 Stockfish-2000               -inf     nan       3    0.0%    0.0% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 18 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 7 (Arpeggio-1.0.15 vs Stockfish-2200): 1/2-1/2 {Draw by 3-fold repetition}
+Started game 19 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 12 (Stockfish-2000 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 20 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 13 (Arpeggio-1.0.15 vs Stockfish-2100): 1-0 {White mates}
+Started game 21 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 14 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 22 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 19 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black wins by adjudication}
+Started game 23 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 15 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Started game 24 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 18 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 25 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 16 (Stockfish-2200 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 26 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 22 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 27 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 17 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15                35     155      20   55.0%   10.0% 
+   1 Stockfish-2100                147     nan       5   70.0%   20.0% 
+   2 Stockfish-1900                  0     381       6   50.0%    0.0% 
+   3 Stockfish-2200                -89     nan       4   37.5%   25.0% 
+   4 Stockfish-2000               -241     nan       5   20.0%    0.0% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 28 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 20 (Stockfish-2000 vs Arpeggio-1.0.15): 1/2-1/2 {Draw by 3-fold repetition}
+Started game 29 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 21 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black mates}
+Started game 30 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 25 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black mates}
+Started game 31 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 27 (Arpeggio-1.0.15 vs Stockfish-2000): 1-0 {White wins by adjudication}
+Started game 32 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 24 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 33 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 28 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 34 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 26 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 35 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 29 (Arpeggio-1.0.15 vs Stockfish-2100): 1-0 {White mates}
+Started game 36 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 23 (Arpeggio-1.0.15 vs Stockfish-2200): 1-0 {White wins by adjudication}
+Started game 37 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 30 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -12     123      30   48.3%   10.0% 
+   1 Stockfish-2100                137     396       8   68.8%   12.5% 
+   2 Stockfish-1900                 89     354       8   62.5%    0.0% 
+   3 Stockfish-2200                -58     350       6   41.7%   16.7% 
+   4 Stockfish-2000               -137     396       8   31.3%   12.5% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 38 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 35 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black wins by adjudication}
+Started game 39 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 31 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Started game 40 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 33 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White mates}
+Started game 41 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 36 (Stockfish-2000 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 42 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 32 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 43 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 34 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 44 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 38 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 45 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 39 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Started game 46 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 37 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black wins by adjudication}
+Started game 47 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 40 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -26     107      40   46.3%    7.5% 
+   1 Stockfish-2200                108     268      10   65.0%   10.0% 
+   2 Stockfish-2100                108     268      10   65.0%   10.0% 
+   3 Stockfish-1900                  0     251      10   50.0%    0.0% 
+   4 Stockfish-2000               -108     268      10   35.0%   10.0% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 48 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 42 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 49 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 43 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black mates}
+Started game 50 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 44 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 51 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 41 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White wins by adjudication}
+Started game 52 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 45 (Arpeggio-1.0.15 vs Stockfish-2100): 1-0 {White wins by adjudication}
+Started game 53 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 48 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 54 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 49 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White mates}
+Started game 55 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 51 (Arpeggio-1.0.15 vs Stockfish-2000): 1-0 {White mates}
+Started game 56 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 52 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 57 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 47 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -21      96      50   47.0%    6.0% 
+   1 Stockfish-2200                154     271      12   70.8%    8.3% 
+   2 Stockfish-2100                 64     230      11   59.1%    9.1% 
+   3 Stockfish-2000                -25     194      14   46.4%    7.1% 
+   4 Stockfish-1900                -82     226      13   38.5%    0.0% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 58 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 50 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 59 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 46 (Stockfish-2100 vs Arpeggio-1.0.15): 1/2-1/2 {Draw by insufficient mating material}
+Started game 60 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 53 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black wins by adjudication}
+Started game 61 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 54 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 62 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 55 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Started game 63 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 58 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 64 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 60 (Stockfish-2000 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 65 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 57 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White wins by adjudication}
+Started game 66 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 61 (Arpeggio-1.0.15 vs Stockfish-2100): 1-0 {White wins by adjudication}
+Started game 67 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 62 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15                 0      87      60   50.0%    6.7% 
+   1 Stockfish-2200                173     274      13   73.1%    7.7% 
+   2 Stockfish-2100                  0     172      16   50.0%   12.5% 
+   3 Stockfish-2000                -47     189      15   43.3%    6.7% 
+   4 Stockfish-1900                -89     199      16   37.5%    0.0% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 68 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 59 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black wins by adjudication}
+Started game 69 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 63 (Arpeggio-1.0.15 vs Stockfish-2200): 1-0 {White wins by adjudication}
+Started game 70 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 56 (Stockfish-2200 vs Arpeggio-1.0.15): 1/2-1/2 {Draw by fifty moves rule}
+Started game 71 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 64 (Stockfish-2200 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 72 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 67 (Arpeggio-1.0.15 vs Stockfish-2000): 1-0 {White mates}
+Started game 73 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 65 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black mates}
+Started game 74 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 68 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 75 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 66 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 76 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 72 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 77 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 70 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15                -5      80      70   49.3%    7.1% 
+   1 Stockfish-2200                105     179      17   64.7%   11.8% 
+   2 Stockfish-2000                -19     168      18   47.2%    5.6% 
+   3 Stockfish-2100                -20     167      17   47.1%   11.8% 
+   4 Stockfish-1900                -39     175      18   44.4%    0.0% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 78 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 73 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black wins by adjudication}
+Started game 79 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 75 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black mates}
+Started game 80 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 71 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Started game 81 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 69 (Arpeggio-1.0.15 vs Stockfish-2100): 1/2-1/2 {Draw by fifty moves rule}
+Started game 82 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 76 (Stockfish-2000 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 83 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 74 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 84 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 77 (Arpeggio-1.0.15 vs Stockfish-2100): 1-0 {White mates}
+Started game 85 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 79 (Arpeggio-1.0.15 vs Stockfish-2200): 1/2-1/2 {Draw by 3-fold repetition}
+Started game 86 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 80 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 87 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 78 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -22      74      80   46.9%    8.8% 
+   1 Stockfish-2200                127     163      20   67.5%   15.0% 
+   2 Stockfish-1900                  0     163      20   50.0%    0.0% 
+   3 Stockfish-2100                -17     149      20   47.5%   15.0% 
+   4 Stockfish-2000                -17     159      20   47.5%    5.0% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 88 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 83 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black mates}
+Started game 89 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 82 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 90 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 81 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White wins by adjudication}
+Started game 91 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 85 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black wins by adjudication}
+Started game 92 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 86 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 93 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 84 (Stockfish-2000 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 94 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 88 (Stockfish-2200 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 95 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 90 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 96 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 89 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White wins by adjudication}
+Started game 97 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 87 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -19      70      90   47.2%    7.8% 
+   1 Stockfish-2200                115     153      22   65.9%   13.6% 
+   2 Stockfish-1900                  0     147      24   50.0%    0.0% 
+   3 Stockfish-2100                -16     142      22   47.7%   13.6% 
+   4 Stockfish-2000                -16     151      22   47.7%    4.5% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 98 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 91 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black mates}
+Started game 99 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 97 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black mates}
+Started game 100 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 92 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 101 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 93 (Arpeggio-1.0.15 vs Stockfish-2100): 1-0 {White mates}
+Started game 102 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 94 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 103 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 95 (Arpeggio-1.0.15 vs Stockfish-2200): 1-0 {White wins by adjudication}
+Started game 104 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 96 (Stockfish-2200 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 105 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 98 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 106 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 100 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 107 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 101 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black mates}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -24      67     100   46.5%    7.0% 
+   1 Stockfish-2200                 73     140      24   60.4%   12.5% 
+   2 Stockfish-2000                 28     141      25   54.0%    4.0% 
+   3 Stockfish-2100                  0     134      25   50.0%   12.0% 
+   4 Stockfish-1900                  0     141      26   50.0%    0.0% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 108 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 99 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black wins by adjudication}
+Started game 109 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 102 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 110 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 105 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White wins by adjudication}
+Started game 111 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 103 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Started game 112 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 104 (Stockfish-2200 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 113 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 106 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 114 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 107 (Arpeggio-1.0.15 vs Stockfish-2000): 1-0 {White wins by adjudication}
+Started game 115 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 108 (Stockfish-2000 vs Arpeggio-1.0.15): 1/2-1/2 {Draw by 3-fold repetition}
+Started game 116 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 111 (Arpeggio-1.0.15 vs Stockfish-2200): 1-0 {White mates}
+Started game 117 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 110 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -13      63     110   48.2%    7.3% 
+   1 Stockfish-2200                 52     131      27   57.4%   11.1% 
+   2 Stockfish-2000                 25     130      28   53.6%    7.1% 
+   3 Stockfish-1900                  0     135      28   50.0%    0.0% 
+   4 Stockfish-2100                -26     129      27   46.3%   11.1% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 118 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 114 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 119 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 113 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White wins by adjudication}
+Started game 120 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 112 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 121 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 118 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 122 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 115 (Arpeggio-1.0.15 vs Stockfish-2000): 1-0 {White mates}
+Started game 123 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 119 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Finished game 117 (Arpeggio-1.0.15 vs Stockfish-2100): 1-0 {White mates}
+Started game 125 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Started game 124 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 109 (Arpeggio-1.0.15 vs Stockfish-2100): 1/2-1/2 {Draw by adjudication: maximal game length}
+Started game 126 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 116 (Stockfish-2000 vs Arpeggio-1.0.15): 1/2-1/2 {Draw by insufficient mating material}
+Started game 127 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 121 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black mates}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -17      60     120   47.5%    8.3% 
+   1 Stockfish-2200                 73     128      29   60.3%   10.3% 
+   2 Stockfish-2000                 12     123      30   51.7%   10.0% 
+   3 Stockfish-1900                 11     128      31   51.6%    0.0% 
+   4 Stockfish-2100                -23     120      30   46.7%   13.3% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 128 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 125 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black mates}
+Started game 129 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 126 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 130 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 120 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 131 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 124 (Stockfish-2000 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 132 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 122 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Finished game 127 (Arpeggio-1.0.15 vs Stockfish-2200): 1-0 {White mates}
+Started game 134 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Started game 133 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 123 (Arpeggio-1.0.15 vs Stockfish-2000): 1-0 {White wins by adjudication}
+Started game 135 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 133 (Arpeggio-1.0.15 vs Stockfish-2100): 1-0 {White wins by adjudication}
+Started game 136 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 130 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 137 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 129 (Arpeggio-1.0.15 vs Stockfish-1900): 1/2-1/2 {Draw by 3-fold repetition}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15                -8      58     130   48.8%    8.5% 
+   1 Stockfish-2200                 68     124      31   59.7%    9.7% 
+   2 Stockfish-1900                -10     119      34   48.5%    2.9% 
+   3 Stockfish-2100                -11     115      33   48.5%   12.1% 
+   4 Stockfish-2000                -11     119      32   48.4%    9.4% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 138 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 131 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black wins by adjudication}
+Started game 139 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 128 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 140 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 132 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 141 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 134 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 142 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 135 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Started game 143 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 137 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White mates}
+Started game 144 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 139 (Arpeggio-1.0.15 vs Stockfish-2000): 1-0 {White wins by adjudication}
+Started game 145 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 136 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 146 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 138 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 147 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 142 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White mates}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -17      56     140   47.5%    7.9% 
+   1 Stockfish-2200                 94     121      34   63.2%    8.8% 
+   2 Stockfish-2000                  0     114      35   50.0%    8.6% 
+   3 Stockfish-1900                -10     116      36   48.6%    2.8% 
+   4 Stockfish-2100                -10     112      35   48.6%   11.4% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 148 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 140 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 149 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 141 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black wins by adjudication}
+Started game 150 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 143 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Started game 151 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 144 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 152 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 146 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 153 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 147 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black wins by adjudication}
+Started game 154 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 145 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black wins by adjudication}
+Started game 155 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 148 (Stockfish-2000 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 156 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 152 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White mates}
+Finished game 149 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -30      54     150   45.7%    7.3% 
+   1 Stockfish-2200                117     119      37   66.2%    8.1% 
+   2 Stockfish-2100                  9     109      37   51.4%   10.8% 
+   3 Stockfish-2000                  9     109      38   51.3%    7.9% 
+   4 Stockfish-1900                 -9     113      38   48.7%    2.6% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 158 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Started game 157 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 151 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Started game 159 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 154 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 160 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 150 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 161 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 157 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black mates}
+Started game 162 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 153 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black wins by adjudication}
+Started game 163 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 155 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black wins by adjudication}
+Started game 164 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 160 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 165 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 156 (Stockfish-2000 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 166 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 158 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 167 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 161 (Arpeggio-1.0.15 vs Stockfish-1900): 1/2-1/2 {Draw by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -30      52     160   45.6%    7.5% 
+   1 Stockfish-2200                131     117      39   67.9%    7.7% 
+   2 Stockfish-2000                  9     107      40   51.2%    7.5% 
+   3 Stockfish-2100                  0     105      40   50.0%   10.0% 
+   4 Stockfish-1900                 -8     107      41   48.8%    4.9% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 168 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 162 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 169 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 159 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Started game 170 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 164 (Stockfish-2000 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 171 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 163 (Arpeggio-1.0.15 vs Stockfish-2000): 1/2-1/2 {Draw by 3-fold repetition}
+Started game 172 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 168 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 173 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 167 (Arpeggio-1.0.15 vs Stockfish-2200): 1-0 {White wins by adjudication}
+Started game 174 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 166 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 175 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 165 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black wins by adjudication}
+Started game 176 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 169 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White wins by adjudication}
+Started game 177 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 172 (Stockfish-2000 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -27      51     170   46.2%    7.6% 
+   1 Stockfish-2200                130     113      42   67.9%    7.1% 
+   2 Stockfish-2100                 17     103      42   52.4%    9.5% 
+   3 Stockfish-2000                 -8     102      43   48.8%    9.3% 
+   4 Stockfish-1900                -24     105      43   46.5%    4.7% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 178 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 170 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 179 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 171 (Arpeggio-1.0.15 vs Stockfish-2000): 1-0 {White wins by adjudication}
+Started game 180 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 173 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black wins by adjudication}
+Started game 181 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 174 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 182 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 176 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 183 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 177 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black wins by adjudication}
+Started game 184 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 182 (Stockfish-2100 vs Arpeggio-1.0.15): 1/2-1/2 {Draw by 3-fold repetition}
+Started game 185 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 175 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Started game 186 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 178 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 187 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 180 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -35      49     180   45.0%    7.8% 
+   1 Stockfish-2200                142     112      44   69.3%    6.8% 
+   2 Stockfish-2100                 31      99      45   54.4%   11.1% 
+   3 Stockfish-2000                 -8      99      45   48.9%    8.9% 
+   4 Stockfish-1900                -15     101      46   47.8%    4.3% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 188 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 179 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black wins by adjudication}
+Started game 189 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 181 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black wins by adjudication}
+Started game 190 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 183 (Arpeggio-1.0.15 vs Stockfish-2200): 1-0 {White mates}
+Started game 191 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 184 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 192 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 186 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 193 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 187 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black wins by adjudication}
+Started game 194 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 188 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 195 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 185 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White mates}
+Started game 196 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 191 (Arpeggio-1.0.15 vs Stockfish-2200): 1-0 {White wins by adjudication}
+Started game 197 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 190 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -33      48     190   45.3%    7.4% 
+   1 Stockfish-2200                123     106      47   67.0%    6.4% 
+   2 Stockfish-2100                 30      97      47   54.3%   10.6% 
+   3 Stockfish-2000                 14      96      48   52.1%    8.3% 
+   4 Stockfish-1900                -29      99      48   45.8%    4.2% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 198 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 189 (Arpeggio-1.0.15 vs Stockfish-2100): 1/2-1/2 {Draw by insufficient mating material}
+Started game 199 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 192 (Stockfish-2200 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 200 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 196 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 201 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 193 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black wins by adjudication}
+Started game 202 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 197 (Arpeggio-1.0.15 vs Stockfish-2100): 1-0 {White mates}
+Started game 203 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 199 (Arpeggio-1.0.15 vs Stockfish-2200): 1-0 {White wins by adjudication}
+Finished game 198 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 205 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Started game 204 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 194 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 206 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 195 (Arpeggio-1.0.15 vs Stockfish-2000): 1/2-1/2 {Draw by insufficient mating material}
+Started game 207 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 200 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -31      47     200   45.5%    8.0% 
+   1 Stockfish-2200                108     101      50   65.0%    6.0% 
+   2 Stockfish-2100                 28      93      50   54.0%   12.0% 
+   3 Stockfish-2000                 21      94      50   53.0%   10.0% 
+   4 Stockfish-1900                -28      97      50   46.0%    4.0% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 208 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 202 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 209 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 203 (Arpeggio-1.0.15 vs Stockfish-2000): 1-0 {White wins by adjudication}
+Started game 210 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 206 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 211 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 201 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White mates}
+Started game 212 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 207 (Arpeggio-1.0.15 vs Stockfish-2200): 1/2-1/2 {Draw by 3-fold repetition}
+Started game 213 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 204 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 214 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 208 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 215 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 209 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black wins by adjudication}
+Started game 216 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 205 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black wins by adjudication}
+Started game 217 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 210 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White mates}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -38      45     210   44.5%    8.1% 
+   1 Stockfish-2200                110      98      52   65.4%    7.7% 
+   2 Stockfish-2100                 40      91      52   55.8%   11.5% 
+   3 Stockfish-2000                 20      92      52   52.9%    9.6% 
+   4 Stockfish-1900                -13      93      54   48.1%    3.7% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 218 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 212 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 219 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 214 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 220 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 215 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Started game 221 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 211 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black wins by adjudication}
+Started game 222 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 213 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black wins by adjudication}
+Started game 223 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 216 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 224 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 217 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White mates}
+Started game 225 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 220 (Stockfish-2000 vs Arpeggio-1.0.15): 1/2-1/2 {Draw by 3-fold repetition}
+Started game 226 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 219 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black mates}
+Started game 227 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 221 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -48      45     220   43.2%    8.2% 
+   1 Stockfish-2200                120      97      54   66.7%    7.4% 
+   2 Stockfish-2100                 57      90      55   58.2%   10.9% 
+   3 Stockfish-2000                 37      88      56   55.4%   10.7% 
+   4 Stockfish-1900                -19      92      55   47.3%    3.6% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 228 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 222 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 229 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 224 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 230 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 223 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black mates}
+Started game 231 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 228 (Stockfish-2000 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 232 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 227 (Arpeggio-1.0.15 vs Stockfish-2000): 1-0 {White wins by adjudication}
+Started game 233 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 225 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black wins by adjudication}
+Started game 234 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 218 (Stockfish-1900 vs Arpeggio-1.0.15): 1/2-1/2 {Draw by adjudication: maximal game length}
+Started game 235 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 229 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black wins by adjudication}
+Started game 236 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 231 (Arpeggio-1.0.15 vs Stockfish-2200): 1-0 {White wins by adjudication}
+Started game 237 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 234 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -47      44     230   43.3%    8.3% 
+   1 Stockfish-2200                120      95      57   66.7%    7.0% 
+   2 Stockfish-2100                 68      89      57   59.6%   10.5% 
+   3 Stockfish-2000                 24      86      58   53.4%   10.3% 
+   4 Stockfish-1900                -18      89      58   47.4%    5.2% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 238 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 233 (Arpeggio-1.0.15 vs Stockfish-1900): 1-0 {White wins by adjudication}
+Started game 239 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 226 (Stockfish-1900 vs Arpeggio-1.0.15): 1/2-1/2 {Draw by insufficient mating material}
+Started game 240 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 230 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 241 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 235 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black wins by adjudication}
+Started game 242 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 232 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 243 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 240 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 244 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 241 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black mates}
+Started game 245 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 237 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black mates}
+Started game 246 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 242 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 247 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 239 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -53      43     240   42.5%    8.3% 
+   1 Stockfish-2200                134      94      60   68.3%    6.7% 
+   2 Stockfish-2100                 66      87      59   59.3%   10.2% 
+   3 Stockfish-2000                 30      86      59   54.2%   10.2% 
+   4 Stockfish-1900                -11      85      62   48.4%    6.5% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 248 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 238 (Stockfish-2100 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 249 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 243 (Arpeggio-1.0.15 vs Stockfish-2000): 1-0 {White wins by adjudication}
+Started game 250 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 244 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 251 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 247 (Arpeggio-1.0.15 vs Stockfish-2200): 1-0 {White wins by adjudication}
+Started game 252 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 236 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 253 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 246 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 254 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 245 (Arpeggio-1.0.15 vs Stockfish-2100): 1-0 {White mates}
+Started game 255 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 248 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 256 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 249 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black mates}
+Started game 257 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 250 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -50      42     250   42.8%    8.0% 
+   1 Stockfish-2200                129      92      62   67.7%    6.5% 
+   2 Stockfish-2100                 57      85      62   58.1%    9.7% 
+   3 Stockfish-2000                 34      84      62   54.8%    9.7% 
+   4 Stockfish-1900                -11      84      64   48.4%    6.3% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 258 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 251 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black wins by adjudication}
+Started game 259 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 254 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 260 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 256 (Stockfish-2200 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 261 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 252 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 262 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 255 (Arpeggio-1.0.15 vs Stockfish-2200): 0-1 {Black wins by adjudication}
+Started game 263 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 257 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black mates}
+Started game 264 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 258 (Stockfish-1900 vs Arpeggio-1.0.15): 0-1 {Black wins by adjudication}
+Started game 265 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 253 (Arpeggio-1.0.15 vs Stockfish-2100): 0-1 {Black wins by adjudication}
+Started game 266 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 259 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black mates}
+Started game 267 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 262 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Rank Name                          Elo     +/-   Games   Score    Draw 
+   0 Arpeggio-1.0.15               -51      41     260   42.7%    7.7% 
+   1 Stockfish-2200                124      90      64   67.2%    6.3% 
+   2 Stockfish-2100                 48      83      65   56.9%    9.2% 
+   3 Stockfish-2000                 48      83      65   56.9%    9.2% 
+   4 Stockfish-1900                -11      83      66   48.5%    6.1% 
+
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 268 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)
+Finished game 261 (Arpeggio-1.0.15 vs Stockfish-2100): 1-0 {White wins by adjudication}
+Started game 269 of 800 (Arpeggio-1.0.15 vs Stockfish-2100)
+Finished game 264 (Stockfish-2200 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 270 of 800 (Stockfish-2100 vs Arpeggio-1.0.15)
+Finished game 260 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 271 of 800 (Arpeggio-1.0.15 vs Stockfish-2200)
+Finished game 265 (Arpeggio-1.0.15 vs Stockfish-1900): 0-1 {Black mates}
+Started game 272 of 800 (Stockfish-2200 vs Arpeggio-1.0.15)
+Finished game 267 (Arpeggio-1.0.15 vs Stockfish-2000): 0-1 {Black mates}
+Started game 273 of 800 (Arpeggio-1.0.15 vs Stockfish-1900)
+Finished game 266 (Stockfish-1900 vs Arpeggio-1.0.15): 1-0 {White wins by adjudication}
+Started game 274 of 800 (Stockfish-1900 vs Arpeggio-1.0.15)
+Finished game 268 (Stockfish-2000 vs Arpeggio-1.0.15): 1-0 {White mates}
+Started game 275 of 800 (Arpeggio-1.0.15 vs Stockfish-2000)
+Finished game 270 (Stockfish-2100 vs Arpeggio-1.0.15): 0-1 {Black mates}
+Started game 276 of 800 (Stockfish-2000 vs Arpeggio-1.0.15)

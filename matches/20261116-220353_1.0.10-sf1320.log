@@ -1,0 +1,381 @@
+Indexing opening suite...
+Started game 2 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Started game 6 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Started game 3 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Started game 1 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Started game 4 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Started game 7 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Started game 5 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Started game 8 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 4 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 1 - 0 - 0  [1.000] 1
+Started game 9 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 7 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 2 - 0 - 0  [1.000] 2
+Started game 10 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 3 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 3 - 0 - 0  [1.000] 3
+Started game 11 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 6 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 3 - 1 - 0  [0.750] 4
+Started game 12 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 1 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 4 - 1 - 0  [0.800] 5
+Started game 13 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 2 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 5 - 1 - 0  [0.833] 6
+Started game 14 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 8 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 5 - 2 - 0  [0.714] 7
+Started game 15 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 5 (Arpeggio-1.0.10 vs Stockfish-1320): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 5 - 3 - 0  [0.625] 8
+Started game 16 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 10 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 5 - 4 - 0  [0.556] 9
+Started game 17 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 9 (Arpeggio-1.0.10 vs Stockfish-1320): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 5 - 5 - 0  [0.500] 10
+...      Arpeggio-1.0.10 playing White: 3 - 2 - 0  [0.600] 5
+...      Arpeggio-1.0.10 playing Black: 2 - 3 - 0  [0.400] 5
+...      White vs Black: 6 - 4 - 0  [0.600] 10
+Elo difference: 0.0 +/- 251.3, LOS: 50.0 %, DrawRatio: 0.0 %
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 18 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 11 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 6 - 5 - 0  [0.545] 11
+Started game 19 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 12 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 7 - 5 - 0  [0.583] 12
+Started game 20 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 13 (Arpeggio-1.0.10 vs Stockfish-1320): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 7 - 6 - 0  [0.538] 13
+Started game 21 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 16 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 7 - 7 - 0  [0.500] 14
+Started game 22 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 14 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 8 - 7 - 0  [0.533] 15
+Started game 23 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 15 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 9 - 7 - 0  [0.563] 16
+Started game 24 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 19 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 10 - 7 - 0  [0.588] 17
+Started game 25 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 17 (Arpeggio-1.0.10 vs Stockfish-1320): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 10 - 8 - 0  [0.556] 18
+Started game 26 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 22 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 11 - 8 - 0  [0.579] 19
+Started game 27 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 20 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 12 - 8 - 0  [0.600] 20
+...      Arpeggio-1.0.10 playing White: 6 - 4 - 0  [0.600] 10
+...      Arpeggio-1.0.10 playing Black: 6 - 4 - 0  [0.600] 10
+...      White vs Black: 10 - 10 - 0  [0.500] 20
+Elo difference: 70.4 +/- 168.9, LOS: 81.4 %, DrawRatio: 0.0 %
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 28 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 18 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 13 - 8 - 0  [0.619] 21
+Started game 29 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 24 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 14 - 8 - 0  [0.636] 22
+Started game 30 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 21 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 15 - 8 - 0  [0.652] 23
+Started game 31 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 25 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 16 - 8 - 0  [0.667] 24
+Started game 32 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 23 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 17 - 8 - 0  [0.680] 25
+Started game 33 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 27 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 18 - 8 - 0  [0.692] 26
+Started game 34 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 29 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 19 - 8 - 0  [0.704] 27
+Started game 35 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 30 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 20 - 8 - 0  [0.714] 28
+Started game 36 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 31 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 21 - 8 - 0  [0.724] 29
+Started game 37 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 26 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 21 - 9 - 0  [0.700] 30
+...      Arpeggio-1.0.10 playing White: 12 - 4 - 0  [0.750] 16
+...      Arpeggio-1.0.10 playing Black: 9 - 5 - 0  [0.643] 14
+...      White vs Black: 17 - 13 - 0  [0.567] 30
+Elo difference: 147.2 +/- 147.8, LOS: 98.6 %, DrawRatio: 0.0 %
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 38 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 32 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 22 - 9 - 0  [0.710] 31
+Started game 39 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 28 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 23 - 9 - 0  [0.719] 32
+Started game 40 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 33 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 24 - 9 - 0  [0.727] 33
+Started game 41 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 37 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 25 - 9 - 0  [0.735] 34
+Started game 42 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 35 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 26 - 9 - 0  [0.743] 35
+Started game 43 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 34 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 26 - 10 - 0  [0.722] 36
+Started game 44 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 36 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 27 - 10 - 0  [0.730] 37
+Started game 45 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 45 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 28 - 10 - 0  [0.737] 38
+Started game 46 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 41 (Arpeggio-1.0.10 vs Stockfish-1320): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 28 - 11 - 0  [0.718] 39
+Started game 47 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 38 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 29 - 11 - 0  [0.725] 40
+...      Arpeggio-1.0.10 playing White: 16 - 5 - 0  [0.762] 21
+...      Arpeggio-1.0.10 playing Black: 13 - 6 - 0  [0.684] 19
+...      White vs Black: 22 - 18 - 0  [0.550] 40
+Elo difference: 168.4 +/- 129.5, LOS: 99.8 %, DrawRatio: 0.0 %
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 48 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 39 (Arpeggio-1.0.10 vs Stockfish-1320): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 29 - 12 - 0  [0.707] 41
+Started game 49 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 43 (Arpeggio-1.0.10 vs Stockfish-1320): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 29 - 13 - 0  [0.690] 42
+Started game 50 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 44 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 29 - 14 - 0  [0.674] 43
+Started game 51 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 42 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 30 - 14 - 0  [0.682] 44
+Started game 52 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Warning: Illegal PV move e5f4 from Arpeggio-1.0.10 (15)
+Warning: PV:  e5f4
+Finished game 46 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {Black makes an illegal move: e5f4}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 30 - 15 - 0  [0.667] 45
+Started game 53 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 40 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 31 - 15 - 0  [0.674] 46
+Started game 54 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 47 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 32 - 15 - 0  [0.681] 47
+Started game 55 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 49 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 33 - 15 - 0  [0.688] 48
+Started game 56 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 48 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 34 - 15 - 0  [0.694] 49
+Started game 57 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 53 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 35 - 15 - 0  [0.700] 50
+...      Arpeggio-1.0.10 playing White: 19 - 7 - 0  [0.731] 26
+...      Arpeggio-1.0.10 playing Black: 16 - 8 - 0  [0.667] 24
+...      White vs Black: 27 - 23 - 0  [0.540] 50
+Elo difference: 147.2 +/- 110.2, LOS: 99.8 %, DrawRatio: 0.0 %
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 58 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 50 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 36 - 15 - 0  [0.706] 51
+Started game 59 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 54 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 37 - 15 - 0  [0.712] 52
+Started game 60 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 52 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 38 - 15 - 0  [0.717] 53
+Started game 61 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 51 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 39 - 15 - 0  [0.722] 54
+Started game 62 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 57 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 40 - 15 - 0  [0.727] 55
+Started game 63 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 56 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 40 - 16 - 0  [0.714] 56
+Started game 64 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 55 (Arpeggio-1.0.10 vs Stockfish-1320): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 40 - 17 - 0  [0.702] 57
+Started game 65 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 60 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 40 - 18 - 0  [0.690] 58
+Started game 66 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 65 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 41 - 18 - 0  [0.695] 59
+Started game 67 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 62 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 41 - 19 - 0  [0.683] 60
+...      Arpeggio-1.0.10 playing White: 22 - 8 - 0  [0.733] 30
+...      Arpeggio-1.0.10 playing Black: 19 - 11 - 0  [0.633] 30
+...      White vs Black: 33 - 27 - 0  [0.550] 60
+Elo difference: 133.6 +/- 97.9, LOS: 99.8 %, DrawRatio: 0.0 %
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 68 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 59 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 42 - 19 - 0  [0.689] 61
+Started game 69 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 61 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 43 - 19 - 0  [0.694] 62
+Started game 70 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 58 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 44 - 19 - 0  [0.698] 63
+Started game 71 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 64 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 45 - 19 - 0  [0.703] 64
+Started game 72 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 63 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 46 - 19 - 0  [0.708] 65
+Started game 73 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 67 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 47 - 19 - 0  [0.712] 66
+Started game 74 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 70 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 47 - 20 - 0  [0.701] 67
+Started game 75 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 69 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 48 - 20 - 0  [0.706] 68
+Started game 76 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 66 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 49 - 20 - 0  [0.710] 69
+Started game 77 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 68 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 50 - 20 - 0  [0.714] 70
+...      Arpeggio-1.0.10 playing White: 27 - 8 - 0  [0.771] 35
+...      Arpeggio-1.0.10 playing Black: 23 - 12 - 0  [0.657] 35
+...      White vs Black: 39 - 31 - 0  [0.557] 70
+Elo difference: 159.2 +/- 93.3, LOS: 100.0 %, DrawRatio: 0.0 %
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 78 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 71 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 51 - 20 - 0  [0.718] 71
+Started game 79 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 72 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 52 - 20 - 0  [0.722] 72
+Started game 80 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 73 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 53 - 20 - 0  [0.726] 73
+Started game 81 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 79 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 54 - 20 - 0  [0.730] 74
+Started game 82 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 75 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 55 - 20 - 0  [0.733] 75
+Started game 83 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 76 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 56 - 20 - 0  [0.737] 76
+Started game 84 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 77 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 57 - 20 - 0  [0.740] 77
+Started game 85 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 78 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 58 - 20 - 0  [0.744] 78
+Started game 86 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 80 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 59 - 20 - 0  [0.747] 79
+Started game 87 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 82 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 59 - 21 - 0  [0.738] 80
+...      Arpeggio-1.0.10 playing White: 32 - 8 - 0  [0.800] 40
+...      Arpeggio-1.0.10 playing Black: 27 - 13 - 0  [0.675] 40
+...      White vs Black: 45 - 35 - 0  [0.563] 80
+Elo difference: 179.5 +/- 89.6, LOS: 100.0 %, DrawRatio: 0.0 %
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 88 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 83 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 60 - 21 - 0  [0.741] 81
+Started game 89 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 86 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 61 - 21 - 0  [0.744] 82
+Started game 90 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 74 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 61 - 22 - 0  [0.735] 83
+Started game 91 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 81 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 62 - 22 - 0  [0.738] 84
+Started game 92 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 85 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 63 - 22 - 0  [0.741] 85
+Started game 93 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 84 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 64 - 22 - 0  [0.744] 86
+Started game 94 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Warning: Illegal PV move e5f4 from Arpeggio-1.0.10 (7)
+Warning: PV:  e5f4
+Finished game 94 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {Black makes an illegal move: e5f4}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 64 - 23 - 0  [0.736] 87
+Started game 95 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 92 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 65 - 23 - 0  [0.739] 88
+Started game 96 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 87 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 66 - 23 - 0  [0.742] 89
+Started game 97 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 90 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 67 - 23 - 0  [0.744] 90
+...      Arpeggio-1.0.10 playing White: 36 - 8 - 0  [0.818] 44
+...      Arpeggio-1.0.10 playing Black: 31 - 15 - 0  [0.674] 46
+...      White vs Black: 51 - 39 - 0  [0.567] 90
+Elo difference: 185.7 +/- 85.0, LOS: 100.0 %, DrawRatio: 0.0 %
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+Started game 98 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 93 (Arpeggio-1.0.10 vs Stockfish-1320): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 67 - 24 - 0  [0.736] 91
+Started game 99 of 100 (Arpeggio-1.0.10 vs Stockfish-1320)
+Finished game 91 (Arpeggio-1.0.10 vs Stockfish-1320): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 68 - 24 - 0  [0.739] 92
+Started game 100 of 100 (Stockfish-1320 vs Arpeggio-1.0.10)
+Finished game 95 (Arpeggio-1.0.10 vs Stockfish-1320): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 68 - 25 - 0  [0.731] 93
+Finished game 97 (Arpeggio-1.0.10 vs Stockfish-1320): 0-1 {Black mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 68 - 26 - 0  [0.723] 94
+Finished game 98 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White mates}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 68 - 27 - 0  [0.716] 95
+Finished game 96 (Stockfish-1320 vs Arpeggio-1.0.10): 1-0 {White wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 68 - 28 - 0  [0.708] 96
+Finished game 100 (Stockfish-1320 vs Arpeggio-1.0.10): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 69 - 28 - 0  [0.711] 97
+Finished game 89 (Arpeggio-1.0.10 vs Stockfish-1320): 0-1 {Black wins by adjudication}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 69 - 29 - 0  [0.704] 98
+Finished game 88 (Stockfish-1320 vs Arpeggio-1.0.10): 1/2-1/2 {Draw by adjudication: maximal game length}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 69 - 29 - 1  [0.702] 99
+Finished game 99 (Arpeggio-1.0.10 vs Stockfish-1320): 1/2-1/2 {Draw by 3-fold repetition}
+Score of Arpeggio-1.0.10 vs Stockfish-1320: 69 - 29 - 2  [0.700] 100
+...      Arpeggio-1.0.10 playing White: 37 - 12 - 1  [0.750] 50
+...      Arpeggio-1.0.10 playing Black: 32 - 17 - 1  [0.650] 50
+...      White vs Black: 54 - 44 - 2  [0.550] 100
+Elo difference: 147.2 +/- 75.0, LOS: 100.0 %, DrawRatio: 2.0 %
+SPRT: llr 0 (0.0%), lbound -inf, ubound inf
+
+Player: Arpeggio-1.0.10
+   "Draw by 3-fold repetition": 1
+   "Draw by adjudication: maximal game length": 1
+   "Loss: Black makes an illegal move: e5f4": 2
+   "Loss: Black mates": 5
+   "Loss: Black wins by adjudication": 7
+   "Loss: White mates": 11
+   "Loss: White wins by adjudication": 4
+   "Win: Black mates": 15
+   "Win: Black wins by adjudication": 17
+   "Win: White mates": 19
+   "Win: White wins by adjudication": 18
+Player: Stockfish-1320
+   "Draw by 3-fold repetition": 1
+   "Draw by adjudication: maximal game length": 1
+   "Loss: Black mates": 15
+   "Loss: Black wins by adjudication": 17
+   "Loss: White mates": 19
+   "Loss: White wins by adjudication": 18
+   "Win: Black makes an illegal move: e5f4": 2
+   "Win: Black mates": 5
+   "Win: Black wins by adjudication": 7
+   "Win: White mates": 11
+   "Win: White wins by adjudication": 4
+Finished match
